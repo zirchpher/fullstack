@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+.bem {
+    display: flex;
+    flex-direction: row;
+}
+
+.bem__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 33.3%;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.bem__item:hover {
+    width: 100vw;
+}
+
+.bem__item h1 {
+    color: azure;
+    text-align: center;
+
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.bem__item p {
+    color: azure;
+    text-align: center;
+
+    font-size: 2rem;
+}
+
+.bem__item--red {
+    background-color: red;
+}
+
+.bem__item--blue {
+    background-color: blue;
+}
+
+.bem__item--green {
+    background-color: green;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 31.25%;
+    }
+
+    .bem__item h1 {
+        width: 70%;
+    }
+}

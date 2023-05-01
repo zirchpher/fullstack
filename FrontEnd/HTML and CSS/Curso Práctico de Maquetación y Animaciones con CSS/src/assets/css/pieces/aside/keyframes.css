@@ -1,0 +1,17 @@
+@keyframes aside-superman {
+    from {
+        transform: translateY(400px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes aside-title {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,26 @@
+button {
+    inline-size: 100px;
+    block-size: 30px;
+
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+.better {
+    will-change: transform;
+    transition: transform 500ms;
+}
+
+.better:hover {
+    transform: translateY(5px);
+}
+
+.worst {
+    will-change: margin-block-start;
+    transition: margin-block-start 500ms;
+    transition-timing-function: linear;
+}
+
+.worst:hover {
+    margin-block-start: 5px;
+}

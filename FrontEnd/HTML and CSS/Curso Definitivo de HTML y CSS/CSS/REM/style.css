@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    el cálculo es:
+    (10 / 16) * 100 = 62.5
+    10 Es la medida base que queremos usar
+    16 es lo que equivale un REM
+    100 es el porcentaje
+*/
+html {
+    font-size: 62.5%;
+}
+
+p {
+    font-size: 4rem;
+}
+
+.p {
+    font-size: 2rem;
+}
+

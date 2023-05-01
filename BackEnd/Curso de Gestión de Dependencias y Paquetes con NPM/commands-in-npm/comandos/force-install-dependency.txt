@@ -1,0 +1,22 @@
+Simula que se instala un paquete (no lo instala realmente):
+$ npm install react --dry-run
+
+Forza una instalación, para que busque hasta el último recurso de NPM: 
+// --force o -f
+$ npm install webpack --force
+
+Si hacemos algunos cambios con los paquetes, este comando ayuda a instalar y ordenar los paquetes:
+$ npm install
+
+Para ver los paquetes instalados:
+$ npm list
+
+Para ver los paquetes instalados y sus repositorios:
+$ npm fund
+
+Para ver el repositorio de un paquete en el navegador:
+$ npm fund nodemon@2.0.20
+
+Instalar un paquete con una versión en específico:
+// @0.15.0 indica la versión que quiero instalar
+$ npm install json-server@0.15.0

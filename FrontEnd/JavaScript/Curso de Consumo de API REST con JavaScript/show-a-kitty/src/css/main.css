@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    background-color: black;
+    color: white;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+main,
+.header-page {
+    display: grid;
+    place-items: center;
+
+    width: 80%;
+
+    margin: 0 auto;
+}
+
+main {
+    height: 100%;
+}
+
+.header-page {
+    height: 30px;
+}
+
+.header-nav {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 8px;
+}
+
+.nav-list__item {
+    font-size: 1.3rem;
+}
+
+.nav-list__item a {
+    color: white;
+}
+
+.nav-list-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-list__item--option {
+    border: 1px solid rgb(83, 83, 144);
+    padding: 8px;
+    margin-right: 8px;
+
+    border-radius: 8px;
+}
+
+.logo {
+    width: 40px;
+}
+
+.error-message {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.image-container {
+    display: grid;
+    /* grid-template-columns: repeat(2, minmax(288px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    /* grid-template-rows: repeat(auto-fit, minmax(288px, 1fr)); */
+    gap: 20px;
+
+    min-width: 288px;
+    max-width: 780px;
+}
+
+.cat-image-container {
+    position: relative;
+
+    width: 288px;
+    height: 288px;
+}
+
+.add-favorite-cats {
+    display: none;
+}
+
+.add-favorite-cats__icon {
+    display: none;
+}
+
+.cat-image-container:hover .add-favorite-cats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+
+    width: 288px;
+    height: 288px;
+
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cat-image-container:hover .add-favorite-cats__btn {
+    border: none;
+    padding: 12px;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    background: rgba(255, 255, 255, 0.6);
+    color: black;
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cat-image-container:hover .add-favorite-cats__icon {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    color: #B01E28;
+}
+
+.cat-container__title {
+    margin: 40px 0;
+
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.image-container__img {
+    width: 288px;
+    height: 288px;
+
+    object-fit: cover;
+    filter: drop-shadow(0 0 2px #f4f4f4);
+    border-radius: 12px;
+}
+
+.cat-container__button {
+    display: block;
+
+    width: 100%;
+    height: 48px;
+    margin-top: 24px;
+    border: transparent;
+    border-radius: 8px;
+
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+
+    background-color: #77a1d5;
+    color: black;
+
+    cursor: pointer;
+}
+
+
+/* UPLOAD A MICHI CSS */
+
+#submitDog,
+.custom-file-upload {
+    width: 260px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #DB3A34;
+    opacity: 0.6;
+    color: #fff;
+    transition: 0.5s;
+    margin: 0;
+}
+
+.custom-file-upload:hover,
+#submitDog:hover {
+    opacity: 1;
+}
+
+#submitDog i,
+.custom-file-upload i {
+    margin-left: 12px;
+}
+
+.custom-file-upload {
+    border-radius: 20px 20px 0 0;
+    background-color: #f0f0f0;
+    color: #000;
+    line-height: 50px;
+}
+
+#submitDog {
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+}
+
+#uploadingForm {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#file {
+    display: none;
+}
+
+#preview {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    box-shadow: 0 40px 60px -6px black;
+}
+
+
+
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(1, minmax(288px, 1fr));
+    }
+}

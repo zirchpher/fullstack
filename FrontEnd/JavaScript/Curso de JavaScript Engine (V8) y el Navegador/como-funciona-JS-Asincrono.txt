@@ -1,0 +1,26 @@
+- ¿Cómo funciona JavaScript Asíncrono?
+JavaScript solo puede ejecutar 1 sola tarea a la vez, es decir que cuando se topa con una tarea que le va a tomar mucho tiempo, JS lo que hace es enviar el proceso a otro campo (web APIs), una vez que el proceso está terminado, se verifica que no haya ninguna tarea en el call stack y por fin el proceso que tomaba mucho timpo se agrega al call stack.
+
+Veamos la ruta de cómo JS trabaja asíncronamente: 
+
+1.- JavaScript Pone todos los procesos en el "Call Stack" empezando por el this o global object (window)
+
+2.- Cuando JS se topa con algunas de estas tareas que toman demasiado tiempo, lo que hace es enviarlo hacia "web APIs". Algunas de estas tareas son:
+    * DOM (document)
+    * AJAX (XMLHttpRequest)
+    * Timeout (setTimeOut)
+
+3.- Cuando ese proceso largo es terminado, la tarea es enviada hacia "Callback queue", Callback queue es algo como una lista de tareas terminadas de esos procesos largos
+
+4.- "Event Loop" Siempre está preguntando a "Callback queue" si es que ya hay una tarea terminda, cuando encuentra alguna tarea ya hecha, lo que hace es esperar a que el "Call Stack" esté vacío, una vez que el "Call Stack" está vacío envía a las tareas largas a "Call Stack".
+
+Taquería DeGranda presenta a:
+.
+🌮 - call stack : el taquero (órdenes rápidas)
+👨‍🍳 - web APIs : la cocina
+🌯 - callback queue : las órdenes preparadas
+💁‍♂️ - event loop : el mesero
+
+
+PARA TERMINAR, RECUERDA ESTA FRASE:
+> ¡NO VOY A BLOQUEAR EL EVENT LOOP!

@@ -1,0 +1,35 @@
+:root {
+    /* FONT SIZES */
+    --sm: 1.8rem;
+    --md: 2.4rem;
+    --lg: 3.4rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-info-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-info-body__button {
+    position: relative;
+    left: calc(50% - 80px);
+
+    padding: 8px 24px;
+
+    font-size: var(--sm);
+}
+
+.dishes-collage {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    grid-template-areas:
+        "video video dish1 dish2"
+        "video video dish3 dish4";
+
+    gap: 8px;
+}

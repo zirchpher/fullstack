@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc Descout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 100%;
+            height: 100vh;
+
+            font-size: 1.6rem;
+
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="price">
+        <span>Precio original:</span>
+        <input type="number" id="price" placeholder="$100" required>
+    </label>
+
+    <label for="discount">
+        <span>Descuento a realizar:</span>
+        <input type="number" id="discount" placeholder="20%" required>
+    </label>
+
+    <label for="discountCoupon">
+        <span>¿Tienes algún cupón de descuento extra?</span>
+        <input type="text" id="discountCoupon" placeholder="ACERPLUSCOUPON">
+    </label>
+
+    <button id="calcDiscount">Calculate</button>
+
+    <p id="result"></p>
+    <script src="./main.js"></script>
+</body>
+
+</html>

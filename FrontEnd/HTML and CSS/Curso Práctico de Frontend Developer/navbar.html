@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabvar</title>
+    <!-- importamos las fuentes de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- cierre importe de fonts -->
+
+    <style>
+        /*Usamos esto al principio para quitarle todo lo que no usaremos en ningún elemento html*/
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        :root {
+            --white : #FFFFFF;
+            --black : #000000;
+            --very-ligth-pink : #C7C7C7;
+            --text-input-field : #F7F7F7;
+            --hospital-green : #ACD9B2;
+            /*Font size*/
+            --sm : 13px;
+            --md : 16px;
+            --lg : 19px;
+        }
+
+        body {
+            margin: 0;
+
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /*Buenas prácticas para los atributos en css
+            Posicionamiento
+            Box Model
+            Tipografía
+            Visuales
+            Otros */
+
+        .menu-mobile {
+            display: none;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            
+            padding: 0 24px;
+            border-bottom: 1px solid var(--very-ligth-pink);
+        }
+
+        .navbar-left ul,
+        .navbar-right ul {
+            display: flex;
+            align-items: center;
+
+            height: 60px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .navbar-left {
+            display: flex;
+        }
+
+        .navbar-left ul {
+            margin-left: 12px;
+        }
+
+        .navbar-left ul li a {
+            padding: 8px;
+
+            text-decoration: none;
+            border: 1px solid var(--white);
+            color: var(--very-ligth-pink);
+            border-radius: 8px;
+        }
+
+        .navbar-left ul li a:hover {
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+        }
+
+        .navbar-email {
+            margin-right: 12px;
+            color: var(--very-ligth-pink);
+            font-size: var(--md);
+        }
+
+        .shopping-cart {
+            position: relative;
+        }
+
+        .shopping-cart div {
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            text-align: center;
+
+            border-radius: 50%;
+            background-color: var(--hospital-green);
+            width: 16px;
+            height: 16px;
+
+            font-size: var(--sm);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) 
+        {
+            .menu-mobile 
+            {
+                display: block;
+            }
+
+            .navbar-left ul {
+                display: none;
+            }
+
+            .navbar-email 
+            {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="./frontend-developer/icons/icon_menu.svg" alt="menu-mobile" class="menu-mobile">
+
+        <!-- Dividimos nuestro nav en 2 partes : Parte Left y parte rigth -->
+        <div class="navbar-left">
+            <img src="./frontend-developer/logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <ul>
+                <li>
+                    <a href="#">All</a>
+                </li>
+                <li>
+                    <a href="#">Clothes</a>
+                </li>
+                <li>
+                    <a href="#">Electronics</a>
+                </li>
+                <li>
+                    <a href="#">Furnitures</a>
+                </li>
+                <li>
+                    <a href="#">Toys</a>
+                </li>
+                <li>
+                    <a href="#">Others</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <ul>
+                <li class="navbar-email">
+                    remixzapata@gmail.com
+                </li>
+    
+                <li class="shopping-cart">
+                    <img src="./frontend-developer/icons/icon_shopping_cart.svg" alt="shopping carte">
+    
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

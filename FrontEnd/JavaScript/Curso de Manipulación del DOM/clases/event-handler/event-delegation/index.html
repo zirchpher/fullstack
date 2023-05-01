@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            /* padding: 0; */
+        }
+
+        body {
+            inline-size: 100%;
+            block-size: 100vh;
+            /* 100% del alto de la pantalla */
+        }
+
+        .main {
+            display: grid;
+            grid-template-rows: repeat(auto-fit, minmax(320px, 1fr));
+
+            inline-size: 100%;
+            block-size: 100vh;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <div id="container" class="card">
+            <figure class="card-images">
+                <img class="card-images__img" src="" alt="RAAAA">
+            </figure>
+
+            <div class="card-text" >
+                <h1 class="card-text__title">Title</h1>
+                <p class="card-text__subtitle card-text__subtitle--simple">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                </p>
+                <button class="card-text__btn" id="goto">go</button>
+            </div>
+        </div>
+        <div class="card">
+            <figure class="card-images">
+                <img class="card-images__img" src="" alt="RAAAA">
+            </figure>
+
+            <div id="container" class="card-text">
+                <h1 class="card-text__title">Title</h1>
+                <p class="card-text__subtitle">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                </p>
+                <button class="card-text__btn" id="goto">go</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

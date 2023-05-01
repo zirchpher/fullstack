@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    display: flex;
+    flex-flow: wrap;     
+
+    border: 3px solid turquoise;
+}
+
+.container__item {
+    height: 100px;
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+.container__item--red {
+    background-color: red;
+}
+
+.container__item--blue {
+    background-color: blue;
+}
+
+.container__item--black {
+    background-color: black;
+}
+
+.container__item--silver {
+    background-color: silver;
+}
+
+.container__item--green {
+    background-color: green;
+}
+
+.container__item--skyblue {
+    background-color: skyblue;
+}

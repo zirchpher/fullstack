@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- importamos las fuentes de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- cierre importe de fonts -->
+    <title>Document</title>
+    <style>
+        :root {
+            --white : #FFFFFF;
+            --black : #000000;
+            --very-ligth-pink : #C7C7C7;
+            --text-input-field : #F7F7F7;
+            --hospital-green : #ACD9B2;
+            --botton-principal-hover : #67cd75;
+            /*Font size*/
+            --sm : 13px;
+            --md : 16px;
+            --lg : 19px;
+        }
+
+        body {
+            margin: 0;
+
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /*Buenas prácticas para los atributos en css
+            Posicionamiento
+            Box Model
+            Tipografía
+            Visuales
+            Otros */
+
+        .login {
+            display: grid;
+            place-items: center;
+
+            width: 100%;
+            height: 100vh;
+        }
+
+        .form-container {
+            display: grid;
+
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+
+        .logo {
+            justify-self: center;
+
+            width: 200px;
+            margin-bottom: 40px;
+
+            display: none;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            margin-bottom: 4px;
+
+            font-size: var(--sm);
+            font-weight: bold;
+        }
+
+        .input {
+            padding: 6px;
+
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 30px;
+            margin-bottom: 12px;
+
+            font-size: var(--md);
+        }
+
+        .input-email {
+            margin-bottom: 24px;
+        }
+
+        .primary-button {
+            background-color: var(--hospital-green);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            width: 100%;
+            height: 40px;
+            cursor: pointer;
+
+            font-size: var(--md);
+            font-weight: bold;            
+        }
+
+        .primary-button:hover {
+            background-color: var(--botton-principal-hover);
+
+            font-size: var(--lg);
+        }
+
+        .form a {
+            margin-bottom: 52px;
+
+            text-decoration: none;
+            color: var(--hospital-green);
+            text-align: center;
+
+            font-size: var(--sm);
+            font-weight: bold;
+        }
+
+        .login-button {
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+
+        .secondary-button {
+            background-color: var(--white);
+            border: 1px solid var(--hospital-green);
+            border-radius: 8px;
+            color: var(--hospital-green);
+            width: 100%;
+            height: 40px;
+            cursor: pointer;
+
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .secondary-button:hover {
+            background-color: var(--very-ligth-pink);
+            color: var(--white);
+
+            font-size: var(--lg);
+        }
+
+        @media (max-width: 674px) 
+        {
+            .logo
+            {
+                display: block;
+            }
+
+            .secondary-button
+            {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 24px;
+
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <div class="form-container">
+            <img src="./frontend-developer/logos/logo_yard_sale.svg" alt="Logo" class="logo">
+
+            <form action="" class="form">
+                <label for="email" class="label">Email address</label>
+                <input type="text" id="email" placeholder="example@example.com" class="input input-email">
+
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" placeholder="*********" class="input input-password">
+
+                <input type="submit" value="Log in" class="primary-button login-button">
+
+                <a href="#" >forgot my password</a>
+            </form>
+
+            <button class="secondary-button signup-button">
+                Sign Up
+            </button>
+        </div>
+    </div>
+</body>
+</html>

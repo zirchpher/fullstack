@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego!</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Modal -->
+    <div id="modal" class="modal page-modal hide">
+        <div class="modal-container">
+            <!-- Button close -->
+            <img class="modal-container__close" id="modal-close"
+                src="https://img.icons8.com/ios/50/000000/delete-sign--v1.png" />
+
+            <!-- Modal Slider -->
+            <div class="modal-slider">
+                <input type="radio" name="slider-1" id="radio-1" checked>
+                <input type="radio" name="slider-1" id="radio-2">
+                <input type="radio" name="slider-1" id="radio-3">
+
+                <div class="modal-slider-cards">
+                    <label for="radio-1" id="card-1" class="modal-slider-cards__card">
+                        <img src="https://static.platzi.com/media/public/uploads/spider-man_db8af43d-b692-4986-a385-e645d286e142.png"
+                            alt="spiderman 1" />
+                    </label>
+                    <label for="radio-2" id="card-2" class="modal-slider-cards__card">
+                        <img src="https://static.platzi.com/media/public/uploads/spider-man-2_b24c96b3-6d59-496f-815d-32b25eba0141.png"
+                            alt="spiderman 2" />
+                    </label>
+                    <label for="radio-3" id="card-3" class="modal-slider-cards__card">
+                        <img src="https://static.platzi.com/media/public/uploads/spider-man-3_19f5c510-8059-4477-abf8-42249a5445b7.png"
+                            alt="spiderman 3" />
+                    </label>
+                </div>
+            </div>
+
+            <button class="modal-container__order">¡Lo quiero!</button>
+        </div>
+    </div>
+
+    <div class="page">
+        <!-- Header content -->
+        <header class="header page-header">
+            <nav class="navbar">
+                <div class="navbar-conteiner">
+                    <img class="navbar-conteiner__img" src="https://i.ibb.co/MMmDPXN/lego.png" alt="Logo of the page">
+                    <ul class="navbar-conteiner-list">
+                        <li class="navbar-conteiner-list__item">
+                            <a href="#">Exclusivos</a>
+                        </li>
+                        <li class="navbar-conteiner-list__item">
+                            <a href="#">Nuevos</a>
+                        </li>
+                        <li class="navbar-conteiner-list__item">
+                            <a href="#">Gift Cards</a>
+                        </li>
+                        <li class="navbar-conteiner-list__item">
+                            <a href="#">Find a Store</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="main page-main">
+            <p class="main__subtitle">Diseña tu</p>
+            <h1 class="main__title">Súper Héroe!</h1>
+            <p class="main__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+                ab neque perferendis veritatis ducimus provident voluptatum ullam
+                corporis consequatur officia, incidunt nemo, eligendi ex fugit
+                corrupti inventore? Similique, doloribus eius!
+            </p>
+        </main>
+
+        <!-- Aside content -->
+        <aside class="aside page-aside">
+            <div class="aside__wall"></div>
+
+            <p class="aside__title">Superman</p>
+
+            <img class="aside__img" src="https://i.ibb.co/x16pz1x/super-man.png" alt="superman">
+        </aside>
+
+        <!-- footer content -->
+        <footer class="footer page-footer">
+            <figure class="footer-container">
+                <img id="footer-button" class="footer-container__img" src="https://i.ibb.co/tKWqw8J/spiderman.png"
+                    alt="Spiderman">
+            </figure>
+            <figure class="footer-container">
+                <img id="footer-button" class="footer-container__img" src="https://i.ibb.co/Xzsdvgg/robin.png"
+                    alt="Robin">
+            </figure>
+            <figure class="footer-container">
+                <img id="footer-button" class="footer-container__img" src="https://i.ibb.co/M18p91c/batman.webp"
+                    alt="Batman">
+            </figure>
+        </footer>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader page-loader">
+        <div class="loader-circle loader-circle--1"></div>
+        <div class="loader-circle loader-circle--2"></div>
+        <div class="loader-circle loader-circle--3"></div>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

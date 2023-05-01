@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores - 2</title>
+    <style>
+        body
+        {
+            background: black;
+            font-size: 50px;
+            color: white;
+        }
+        /* Selector Combinado Descendiente */
+        div .rojito
+        {
+            color: peru;
+        }
+        /* Selector Combinado Hijo directo */
+        div > .azulito
+        {
+            color: blue;
+        }
+        /* Selector Combinado Adyacente */
+        p + p
+        {
+            background-color: white;
+            color: black;
+        }
+        /* Selector Combinado General de hermanos 
+           Con este selector combinado ya puedo hacer combinación de las anteriores
+        */
+        div ~ p
+        {
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!-- Selector Combinado Descendiente -->
+    <div>
+        <p class="rojito"> A mí sí me agarra porque estoy dentro de un div 😁 </p>
+    </div>
+    <p class="rojito"> A mí no me agarra porque no estoy dentro de un div 😪 </p>
+
+    <!-- Selector Combinado Descendiente -->
+    <div>
+        <p class="azulito"> A mí sí me agarra 😁 </p>
+        <section>
+            <p class="azulito"> A mí no me agarra 😪 </p>
+        </section>
+    </div>
+    <p class="azulito"> A mí tampoco me agarra 😪 </p>
+
+    <!-- Selector Combinado Adyacente -->
+    <p> Seleccionaré al de abajo :3 </p>
+    <p> El de arriba me seleccionaró :0 </p>
+    <p> Yo también he sido selecionado mis reyes ggg </p>
+    <p> Y así sucesivamente hasta que abras otro tag que no se p </p>
+
+    <h1> A mí no me Selecciona porque soy un h1 😪 </h1>
+
+    <!-- Selector Combinado General de hermanos -->
+    <div>
+        <p class="hijo1"> A mí no porque yo soy un hijo directo :3 </p>
+    </div>
+    <p> A mí sí porque soy un hijo hermano </p>
+</body>
+</html>

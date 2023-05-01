@@ -1,0 +1,19 @@
+{
+  "name": "typescript-init",
+  "version": "1.0.0",
+  "description": "This is an init project for typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "init",
+    "starter"
+  ],
+  "author": "Remix Zapata <remixzapata@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}

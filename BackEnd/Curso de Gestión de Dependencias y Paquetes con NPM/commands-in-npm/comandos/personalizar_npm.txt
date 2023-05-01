@@ -1,0 +1,24 @@
+* Personalizando la configuración global de NPM
+
+Usando los comandos de configuración de npm, podemos configurar fácilmente estos diferentes valores. Para establecer un valor globalmente ejecutamos
+npm config set <key> <value>,
+npm config get [<key>],
+npm config delete <key>,
+npm config list [--json],
+npm config edit,
+npm set <key> <value>,
+npm get [<key>]
+
+Por ejemplo, si queremos establecer el nombre, email del autor y la licencia que por defecto usaremos, puedes ejecutar
+ALGUNAS de las configuraciones por defecto más comunes:
+$ npm config set init-author-name "Tu Nombre"
+$ npm config set init-author-email "TuEmail@email.com"
+$ npm config set init-author-url "https://tuWeb.com"
+$ npm config set init-license "MIT"
+$ npm config set init-version "1.0"
+
+Deseas verificar el valor que esta configurado utiliza el comando npm config get <key>
+Si quieres eliminar uno que creaste mal usa el comando
+npm config delete init.author.emai
+
+Para crear el archivo de configuración con valores predeterminados usa npm init -y recomendado si ya tienes guardados datos como email, nombre y licencia

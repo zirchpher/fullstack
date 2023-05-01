@@ -1,0 +1,22 @@
+div {
+    inline-size: 100px;
+    block-size: 100px;
+    margin: 30px;
+
+    border-radius: 20%;
+    background-color: goldenrod;
+}
+
+/* Solo podemos escribir una sola vez la propiedad transform, entonces por si queremos tener 2 o más transform, usaremos matrix  */
+
+/* Mal (solo rotará el elemento) */
+div:hover {
+    transform: skew(10deg);
+    transform: scale(1.4);
+}
+
+
+/* Bien (realizará ambas transformaciones) */
+div:hover {
+    transform: skew(20deg) scale(1.4);
+}

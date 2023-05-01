@@ -1,0 +1,16 @@
+body {
+    /* counter-reset: Crea o reinicia un contador. */
+    counter-reset: game;
+}
+
+input:checked {
+    /* counter-increment: Incrementa un valor del contador. */
+    /* game (n número): Incrementa el valor en n número */
+    counter-increment: game 2;
+}
+
+.total::after {
+    /* content: Inserta el contenido generado (debe usarse con un pseudoelemento). */
+    /* counter(): Función que agrega el valor de un contador a un elemento. */
+    content: counter(game);
+}

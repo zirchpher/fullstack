@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- importamos las fuentes de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- cierre importe de fonts -->
+    <title>Home</title>
+    <style>
+        :root {
+            --white : #FFFFFF;
+            --black : #000000;
+            --very-ligth-pink : #C7C7C7;
+            --text-input-field : #F7F7F7;
+            --hospital-green : #ACD9B2;
+            /*Font size*/
+            --sm : 13px;
+            --md : 16px;
+            --lg : 19px;
+        }
+
+        /*Buenas prácticas para los atributos en css
+            Posicionamiento
+            Box Model
+            Tipografía
+            Visuales
+            Otros */
+
+        body {
+            margin: 0;
+
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .cards-container {
+            /*Generamos las Grid para las cards*/
+            display: grid;
+            /*auto-fill: que llene de cards la cantidad que quepe
+            240px : El tamaño de cada card*/
+            grid-template-columns: repeat(auto-fill, 240px); 
+            /*Para que haya un espacio entre cada card usamos: */
+            gap: 26px;
+            /*Aliniar todas las card en el centro*/
+            place-content: center;
+        }
+
+        .product-card {
+            width: 240px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            border-radius: 20px;
+            /*Para que una imagen más grande que su div no se contraiga usamos:*/
+            object-fit: cover;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        .product-info figure {
+            margin: 0;
+        }
+
+        .product-info figure img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .product-info div p:nth-child(1) {
+            margin-top: 0;
+            margin-bottom: 4px;
+
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .product-info div p:nth-child(2) {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            color: var(--very-ligth-pink);
+
+            font-size: var(--sm);
+        }
+
+        @media (max-width: 640px) {
+            .cards-container {
+                /*auto-fill: que llene de cards la cantidad que quepe
+                240px : El tamaño de cada card*/
+                grid-template-columns: repeat(auto-fill, 140px); 
+                /*Para que haya un espacio entre cada card usamos: */
+                gap: 26px;
+            }
+
+            .product-card 
+            {
+                width: 140px;
+            }
+    
+            .product-card img
+            {
+                width: 100%;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="main-container">
+        <div class="cards-container">
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/249538/pexels-photo-249538.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="product">
+
+                <div class="product-info">
+                    <div>
+                        <p>$ 120,00</p>
+                        <p>Macbook Pro</p>
+                    </div>
+
+                    <figure>
+                        <img src="./frontend-developer/icons/bt_add_to_cart.svg" alt="icon">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

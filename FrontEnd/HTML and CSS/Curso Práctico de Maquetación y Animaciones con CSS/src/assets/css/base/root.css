@@ -1,0 +1,12 @@
+:root {
+    /* Color */
+    --yellow: #ffd602;
+    --red: #d5040a;
+    --blue: #036cb6;
+    --black: #111111;
+    --white: #eee6d2;
+
+    /* Times */
+    --delay-time: 1.8s;
+    --transition-time: 2s;
+}

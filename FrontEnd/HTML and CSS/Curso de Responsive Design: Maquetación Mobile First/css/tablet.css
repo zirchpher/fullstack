@@ -1,0 +1,20 @@
+.main-product-detail {
+    padding: 20px 10px 60px 10px;
+}
+
+.bitcoin-img-container {
+    background: url(../assets/img/bitcoinbabyx4.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+}
+
+.product-card {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+
+
+.plans-container-slider,
+.main-exchange-table {
+    justify-content: center;
+}

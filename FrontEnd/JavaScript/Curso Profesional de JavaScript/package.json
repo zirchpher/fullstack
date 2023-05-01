@@ -1,0 +1,18 @@
+{
+  "name": "curso-profesional-de-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html src/TypeScript/**/*.html"
+  },
+  "keywords": [],
+  "author": "Remix Zapata <remixzapata@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.3.1"
+  },
+  "browserslist": [
+    "last 1 Firefox version"
+  ]
+}

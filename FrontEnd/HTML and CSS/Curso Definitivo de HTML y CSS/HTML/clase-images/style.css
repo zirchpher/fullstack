@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 24px;
+    font-family: Helvetica;
+}
+
+ul, li {
+    list-style: none;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+figure {
+    display: flex;
+    flex-direction: row;
+}
+
+figcaption {
+    font-weight: bold;
+    padding-right: 16px;
+}
+
+footer > p {
+    text-align: center;
+}
+
+@media (max-width: 412px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+}

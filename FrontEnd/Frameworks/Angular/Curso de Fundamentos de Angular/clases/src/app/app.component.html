@@ -1,0 +1,143 @@
+<h1>Crear un formulario</h1>
+<form #myForm="ngForm" (ngSubmit)="registrarse()">
+    <label> Enter your name
+        <input type="text" name="name" required [(ngModel)]="register.name">
+    </label>
+
+    <label> Enter your email
+        <input type="email" name="email" required [(ngModel)]="register.email">
+    </label>
+
+    <label> Enter your password
+        <input type="password" name="password" required [(ngModel)]="register.password">
+    </label>
+
+    <button [disabled]="myForm.invalid" type="submit">Registrarse</button>
+</form>
+
+<hr>
+<h1>NgClass y NgStyle</h1>
+<input type="text" required #nameIput2="ngModel" [(ngModel)]="username" placeholder="Enter your Name">
+
+<p class="line-error" [ngClass]="{
+        'valid': nameIput2.valid,
+        'invalid': nameIput2.invalid
+    }">
+</p>
+
+<div class="separator">
+    <div>
+        <input type="number" required [(ngModel)]="box.width" placeholder="Enter a width">
+        <input type="number" required [(ngModel)]="box.height" placeholder="Enter a height">
+        <input type="color" required [(ngModel)]="box.color">
+    </div>
+    <div>
+        <p class="square" [ngStyle]="{
+            'width.px': box.width,
+            'height.px': box.height,
+            'background-color': box.color
+        }">
+        </p>
+    </div>
+</div>
+
+<hr>
+<h1>Class & Style</h1>
+<input type="text" required #nameIput="ngModel" [(ngModel)]="username" placeholder="Enter your Name">
+<p class="message-error" [class.invalid]="nameIput.invalid">El campo es requerido</p>
+
+<div class="separator">
+    <div>
+        <input type="text" [(ngModel)]="widthImg" placeholder="Enter your Name">
+    </div>
+    <div>
+        <img [style.width.%]="widthImg" [src]="product.imageUrl" alt="imagen" [title]="product.name">
+    </div>
+</div>
+
+<hr>
+<h1>NgSwitch</h1>
+<input type="text" [(ngModel)]="username" placeholder="Enter your Name">
+<div [ngSwitch]="username">
+    <p *ngSwitchCase="'remmian'"> Hola Remmian! </p>
+    <p *ngSwitchCase="'angel'"> Hola Angel! </p>
+    <p *ngSwitchDefault>No Match</p>
+</div>
+
+<hr>
+<h1>NgFor en array</h1>
+<div>
+    <div class="product-container">
+        <div class="product" *ngFor="let product of products">
+            <h2 class="product__name"> {{ (product.name).toLowerCase() }} </h2>
+            <img class="product__img" [src]="product.image" alt="toy">
+            <p class="product__price"> {{product.price}} </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+<h1>NgFor</h1>
+
+<input type="text" [(ngModel)]="username">
+<button (click)="addUser()">Agregar usuario</button>
+<p *ngIf="this.names.length === 0">La lista está vacía, intenta agregar un nombre!</p>
+<ul>
+    <li *ngFor="let emoji of names; index as indice">
+        {{ indice + 1 }}.- {{ emoji }}
+        <button (click)="deleteName(indice)">Eliminar</button>
+    </li>
+</ul>
+
+<hr>
+<h1>NgIf</h1>
+<input type="text" [(ngModel)]="username" placeholder="Enter your Name">
+
+<p *ngIf="username === 'remmian'; else blockElse"> Hola Remmian! </p>
+
+<ng-template #blockElse>
+    <p>Bloque Else</p>
+</ng-template>
+
+<hr>
+<h1>NgModel</h1>
+
+<input type="text" [(ngModel)]="username" placeholder="Enter your Name">
+
+<p> {{ username }} </p>
+
+<p>Edad: {{ person.age }}</p>
+<input type="number" min="10" max="18" required #ageInput="ngModel" [(ngModel)]="person.age"
+    placeholder="Enter your age">
+
+<p> valid: {{ ageInput.valid }} </p>
+
+<hr>
+<div class="box" (scroll)="onScrool($event)">
+    <p class="box__text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero similique ducimus asperiores cumque beatae
+        deserunt dignissimos possimus excepturi nam aliquam sunt vero dolore saepe, aut corporis adipisci quibusdam,
+        quam repudiandae?
+    </p>
+</div>
+
+<!-- <input type="text" (click)="saludar()" (keyup)="changeText($event)" placeholder="Enter your Name"> -->
+
+<p> {{ username }} </p>
+
+<hr>
+
+<h2>Eventos</h2>
+<p>Edad {{ person.age }} </p>
+<button (click)="increaseAge()"> Increase Age </button>
+
+<hr>
+
+<p>Hola mundo</p>
+<p> {{ 'Socio'.replaceAll("o", "a") }} </p>
+<p> 5 x 5 = {{ 5 * 5 }} </p>
+
+<h1>Hi! I'm {{ person.name }} and I'm {{ person.age }} years old </h1>
+
+<p>{{product.name}} con el kernel {{product.kernel}} </p>
+<img [src]="product.imageUrl" alt="imagen" [title]="product.name">

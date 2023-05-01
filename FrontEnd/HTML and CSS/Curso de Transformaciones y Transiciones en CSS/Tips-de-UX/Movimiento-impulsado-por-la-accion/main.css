@@ -1,0 +1,17 @@
+div {
+    inline-size: 100px;
+    block-size: 100px;
+    margin: 100px;
+
+    border-radius: 50%;
+    background-color: black;
+
+    /* Tiempo de regreso */
+    transition: transform 0.5s linear;
+}
+
+div:hover {
+    transform: translateX(200px);
+    /* Tiempo de ida */
+    transition: transform 1s linear;
+}

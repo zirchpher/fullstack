@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto</title>
+    <!-- importamos las fuentes de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- cierre importe de fonts -->
+
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-ligth-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --points: #d0b5a4;
+            /*Font size*/
+            --sm: 13px;
+            --md: 16px;
+            --lg: 19px;
+        }
+
+        /*Usamos esto al principio para quitarle todo lo que no usaremos en ningún elemento html*/
+
+        body {
+            margin: 0;
+
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /*Buenas prácticas para los atributos en css
+            Posicionamiento
+            Box Model
+            Tipografía
+            Visuales
+            Otros */
+
+
+        /* ------------- NABVAR ------------- */
+        .menu-mobile {
+            display: none;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 0 24px;
+            border-bottom: 1px solid var(--very-ligth-pink);
+        }
+
+        .navbar-left ul,
+        .navbar-right ul {
+            display: flex;
+            align-items: center;
+
+            height: 60px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navbar-left {
+            display: flex;
+        }
+
+        .navbar-left ul {
+            margin-left: 12px;
+        }
+
+        .navbar-left ul li a {
+            padding: 8px;
+
+            text-decoration: none;
+            border: 1px solid var(--white);
+            color: var(--very-ligth-pink);
+            border-radius: 8px;
+        }
+
+        .navbar-left ul li a:hover {
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+        }
+
+        .navbar-email {
+            margin-right: 12px;
+            color: var(--very-ligth-pink);
+            font-size: var(--md);
+        }
+
+        .shopping-cart {
+            position: relative;
+        }
+
+        .shopping-cart div {
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            text-align: center;
+
+            border-radius: 50%;
+            background-color: var(--hospital-green);
+            width: 16px;
+            height: 16px;
+
+            font-size: var(--sm);
+            font-weight: bold;
+        }
+
+        /* ------------- END NABVAR ------------- */
+
+        .product-detail {
+            position: absolute;
+            right: 0;
+
+            width: 360px;
+            box-sizing: border-box;
+            padding: 24px;
+        }
+
+        .title-container {
+            display: flex;
+        }
+
+        .title-container img {
+            transform: rotate(180deg);
+            margin-right: 16px;
+        }
+
+        .my-order-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: var(--lg);
+            font-weight: bold;
+        }
+
+        .order {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 16px;
+            align-items: center;
+
+            border-radius: 12px;
+            background-color: var(--text-input-field);
+            margin-bottom: 24px;
+            padding: 0 24px;
+        }
+
+        .order p:nth-child(1){
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order p span:nth-child(1) {
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .order p:nth-child(2){
+            text-align: end;
+
+            font-weight: bold;
+        }
+
+        .primary-button {
+            background-color: var(--hospital-green);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .add-to-cart-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shopping-cart {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 16px;
+            align-items: center;
+
+            margin-bottom: 24px;
+        }
+
+        .shopping-cart figure {
+            margin: 0;
+        }
+
+        .shopping-cart figure img {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        .shopping-cart p:nth-child(2) {
+            color: var(--very-ligth-pink);
+        }
+
+        .shopping-cart p:nth-child(3) {
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        @media (max-width: 820px) {
+
+            /* ------------- NABVAR ------------- */
+            .menu-mobile {
+                display: block;
+            }
+
+            .navbar-left ul {
+                display: none;
+            }
+
+            .navbar-email {
+                display: none;
+            }
+
+            /* ------------- END NABVAR ------------- */
+            .product-detail {
+                width: 100%;
+            }
+
+            /*Para que la imagen también sea responsive*/
+            .product-detail>img:nth-child(2) {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ------------- NABVAR ------------- -->
+    <nav>
+        <img src="./frontend-developer/icons/icon_menu.svg" alt="menu-mobile" class="menu-mobile">
+
+        <!-- Dividimos nuestro nav en 2 partes : Parte Left y parte rigth -->
+        <div class="navbar-left">
+            <img src="./frontend-developer/logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <ul>
+                <li>
+                    <a href="#">All</a>
+                </li>
+                <li>
+                    <a href="#">Clothes</a>
+                </li>
+                <li>
+                    <a href="#">Electronics</a>
+                </li>
+                <li>
+                    <a href="#">Furnitures</a>
+                </li>
+                <li>
+                    <a href="#">Toys</a>
+                </li>
+                <li>
+                    <a href="#">Others</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <ul>
+                <li class="navbar-email">
+                    remixzapata@gmail.com
+                </li>
+
+                <li class="shopping-cart">
+                    <img src="./frontend-developer/icons/icon_shopping_cart.svg" alt="shopping carte">
+
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ------------- END NABVAR ------------- -->
+
+
+    <aside class="product-detail">
+
+        <div class="title-container">
+            <img src="./frontend-developer/icons/flechita.svg" alt="arrow">
+            <p class="title">My order</p>
+        </div>
+
+
+        <div class="my-order-content">
+
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/932263/pexels-photo-932263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="cat">
+                </figure>
+
+                <p>Lucky cat</p>
+                <p>$15,00</p>
+
+                <img src="./frontend-developer/icons/icon_close.png" alt="">
+
+            </div>
+
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/932263/pexels-photo-932263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="cat">
+                </figure>
+
+                <p>Lucky cat</p>
+                <p>$15,00</p>
+
+                <img src="./frontend-developer/icons/icon_close.png" alt="">
+
+            </div>
+
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/932263/pexels-photo-932263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="cat">
+                </figure>
+
+                <p>Lucky cat</p>
+                <p>$15,00</p>
+
+                <img src="./frontend-developer/icons/icon_close.png" alt="">
+
+            </div>
+
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/932263/pexels-photo-932263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="cat">
+                </figure>
+
+                <p>Lucky cat</p>
+                <p>$15,00</p>
+
+                <img src="./frontend-developer/icons/icon_close.png" alt="">
+
+            </div>
+
+            <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/932263/pexels-photo-932263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="cat">
+                </figure>
+
+                <p>Lucky cat</p>
+                <p>$15,00</p>
+
+                <img src="./frontend-developer/icons/icon_close.png" alt="">
+
+            </div>
+
+            <div class="order">
+                <p>
+                    <span>04.25.2022</span>
+                    <span>4 articles</span>
+                </p>
+                <p>$60.00</p>
+            </div>
+
+            <button class="primary-button">
+                Checkout
+            </button>
+            
+        </div>
+
+    </aside>
+
+</body>
+
+</html>

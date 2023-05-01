@@ -1,0 +1,19 @@
+Para ver qué paquetes están desactualizados:
+$ npm outdate
+
+Para ver de forma más detallada qué paquetes están desactualizados:
+$ npm outdate --dd
+
+Para actualizar todos los paquetes:
+$ npm update
+
+Instalar la última versión disponible de un paquete:
+$ npm install <nombre_paquete>@latest
+
+Para eliminar un paquete:
+// npm uninstall or npm r
+$ npm uninstall <nombre_paquete>
+
+Para eliminar un paquete de node_modules PERO NO DE package.json:
+// Nota: Al parecer no funciona cuando el paquete está en dev-depedencies
+$ npm uninstall <nombre_paquete> --no-save

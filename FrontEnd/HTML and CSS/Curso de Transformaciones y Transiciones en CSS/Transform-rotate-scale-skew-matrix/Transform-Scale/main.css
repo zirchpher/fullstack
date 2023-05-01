@@ -1,0 +1,13 @@
+.circle {
+    inline-size: 100px;
+    block-size: 100px;
+    margin-inline-start: 20px;
+    margin-block-start: 20px;
+
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+}
+
+.circle:hover {
+    transform: scale(0.6, 1.2);
+}

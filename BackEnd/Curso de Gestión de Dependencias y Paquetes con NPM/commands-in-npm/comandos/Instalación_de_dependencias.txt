@@ -1,0 +1,40 @@
+–save : Este paquete que vas a instalar dentro del proyecto es necesario para vivir en producción. Hay que tener cuidado con los paquetes que instalamos, cuando es a producción y cuando no lo es.
+
+–save-dev: Este paquete que vamos a instalar solo es necesario en nuestro entorno local o en el de desarrollo. Es importante no mandar dependencias a producción ni omitir algunas que deban de estar en producción.
+
+
+>>> ¿Cómo instalar dependencias locales?
+$ npm install <paquete>
+
+Por ejemplo, para instalar express, un módulo popular del lado del servidor, deberás ejecutar el comando:
+$ npm install express
+Otra forma de hacerlo es con el flag --save.
+$ npm install --save <paquete>
+
+
+
+>>> ¿Qué son las dependencias de desarrollador?
+Las dependencias de desarrollador son aquellas que no son obligatorias para el proyecto, es decir, sin estas la aplicación servirá. Estas dependencias ofrecen una ayuda para construir código de forma óptima, por ejemplo, formatear el código, agregar estilos, levantar un servidor para observar los cambios.
+Cómo instalar dependencias de desarrollador
+
+Para instalar una dependencia de desarrollador, utiliza el siguiente comando, donde <paquete> es el nombre del paquete.
+$ npm install --save-dev <paquete>
+$ npm install -D <paquete> 
+
+Por ejemplo, para instalar nodemon, un módulo popular para levantar un servidor que escuche cambios, deberás ejecutar el comando:
+$ npm install -D nodemon
+
+
+
+>>> ¿Qué son las dependencias globales?
+Las dependencias globales son aquellas que están disponibles para todos los proyectos en tu computador.
+Cómo instalar dependencias globales
+
+Para instalar una dependencia global, utiliza el siguiente comando, donde <paquete> es el nombre del paquete.
+$ npm install --global <paquete>
+$ npm install -g <paquete>
+
+Por ejemplo, para instalar typescript, un módulo popular que permite el tipado en JavaScript, deberás ejecutar el comando npm install -g typescript.
+
+Para ver que dependencias globales tienes instaladas, ejecuta el siguiente comando:
+$ npm list -g --depth 0

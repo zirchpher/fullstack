@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    inline-size: 400px;
+    block-size: 100px;
+    margin: 50px;
+
+    background-color: papayawhip;
+}
+
+.container:hover .box--1 {
+    transform: rotate(360deg);
+}
+
+.container:hover .box--2 {
+    transform: skew(-30deg);
+}
+
+.container:hover .box--3 {
+    transform: rotate(180deg) scale(1.4);
+}
+
+.box {
+    inline-size: 100px;
+    block-size: 100px;
+}
+
+.box--1 {
+    background-color: orangered;
+
+    transition: transform 1.5s;
+}
+
+.box--2 {
+    background-color: yellow;
+
+    transition: transform 1s;
+}
+
+.box--3 {
+    background-color: turquoise;
+
+    transition: transform 500ms;
+}

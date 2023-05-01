@@ -1,0 +1,19 @@
+a:visited {
+    color: black;
+}
+
+a:link {
+    color: tomato;
+}
+
+p:not(.maravillas) {
+    color: sienna;
+}
+
+input[type=text]:enabled {
+    color: red;
+}
+
+input[type=text]:disabled {
+    color: darkorange;
+}

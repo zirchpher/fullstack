@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See a kitty</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/main.css">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/3ffaa30c0f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header-page">
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li class="nav-list__item nav-list__item--logo">
+                    <a href="./index.html">
+                        <img class="logo" src="./src/images/logos/cat-icon.gif"
+                            alt="Logo de la página de un gatito en gif">
+                        <!-- <i class="fa-solid fa-cat"></i> -->
+                    </a>
+                </li>
+
+                <div class="nav-list-options">
+                    <li class="nav-list__item nav-list__item--option">
+                        <a href="./michis_preferidos.html">Favoritos</a>
+                        <i class="fa-solid fa-star"></i>
+                    </li>
+
+                    <li class="nav-list__item nav-list__item--option">
+                        <a href="./upload-a-michi.html">Subir mi Michi</a>
+                        <i class="fa-solid fa-upload"></i>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="cat-container">
+            <h2 class="cat-container__title">Sube una foto de tu Increíble Michi! 🐱</h2>
+            <div id="favorites-michis-container" class="image-container">
+                <form id="form-upload-michi">
+                    <input id="form-michi-image" type="file" name="file" />
+
+                    <button type="button" onclick="sendMichiPhoto()">
+                        Subir Foto
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JS -->
+    <script src="./src/js/upload-michi.js"></script>
+</body>
+
+</html>

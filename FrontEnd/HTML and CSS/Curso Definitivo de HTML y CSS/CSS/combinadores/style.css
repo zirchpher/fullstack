@@ -1,0 +1,15 @@
+h2 + p {
+    color: aquamarine;
+}
+
+h2 ~ p {
+    color: peru;
+}
+
+div > h2 {
+    color: blue;
+}
+
+div h3 { 
+    font-size: 28px;
+}

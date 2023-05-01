@@ -1,0 +1,43 @@
+Package lock y el uso los símbolos ^ y ~
+
+El Package-lock es un archivo que se genera automáticamente cuando se instala un paquete con npm. Este archivo contiene la información de la versión exacta de cada paquete que se instala, incluyendo las dependencias de cada paquete. Esto es muy útil para asegurar que el equipo de desarrollo trabaje con la misma versión de los paquetes.
+
+"dependencies": {
+    "express": "^4.18.1",
+    "webpack": "^5.74.0"
+},
+
+"webpack": "^5.74.0"
+Ese símbono ^ => significa que se instalará la última versión de webpack que sea compatible con la versión 5.74.0
+
+Si eliminamos ese ^, la versión exacta de webpack que se instalará será la 5.74.0, y no habrá actualizaciones automáticas.
+
+Además de esos símbolos, también tenemos:
+
+    < : Versión menor a la indicada.
+    <= : Versión menor o igual a la indicada.
+    > : Versión mayor a la indicada.
+    >= : Versión mayor o igual a la indicada.
+
+Los cuales se utilizan así:
+
+"dependencies": {
+    "json-server": ">0.15.1",
+    "moment": ">=2.26.0",
+    "date-fns": "<2.14.0",
+     "react": "<=16.12.0"
+}
+
+
+
+
+
+Versiones en las app
+Facebook versión 4.18.1
+
+=> 4.18.1
+- versión 4: indica que es un cambio mayor
+
+- versión 18: indica que es un cambio menor (añade ciertos cambios pero no es un gran paso para decir que es una nueva versión)
+
+- versión 1: indica que es un cambio de parche (es un cambio pequeño, no es un cambio mayor ni menor)

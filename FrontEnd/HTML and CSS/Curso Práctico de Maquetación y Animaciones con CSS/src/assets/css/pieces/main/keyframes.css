@@ -1,0 +1,8 @@
+@keyframes main-content {
+    from {
+        transform: translateX(-750px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}

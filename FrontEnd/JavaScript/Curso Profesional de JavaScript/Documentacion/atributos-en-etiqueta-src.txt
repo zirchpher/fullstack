@@ -1,0 +1,19 @@
+1) Scripts embebidos: el navegador carga línea a línea el HTML y cuando se encuentra un código entre scripts va a detener su ejecución hasta que haya procesado todo el script. Esto es así porque el navegador no puede ejecutar el script hasta que no haya cargado todo el HTML. Por lo tanto, si el script es muy grande, el navegador tardará mucho en cargar la página. Por eso es recomendable que los scripts sean lo más pequeños posible.
+
+Ejemplo:
+    <script> 
+        // your code here
+        console.log('hello world');
+    </script>
+
+
+2) Async: Con async podemos hacer la petición de forma asíncrona y no vamos a detener la carga del DOM hasta que se haga la ejecución del código.
+
+Ejemplo:
+    <script async src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+3) Defer. La petición es igual, asíncrona como en el async pero va a deferir la ejecución del Javascript hasta el final de que se cargue todo el documento. (Se usa normalmente cuando tenemos el script en el HEAD de la página).
+
+Ejemplo:
+    <script defer src="/doc/your-route.js"> </script>

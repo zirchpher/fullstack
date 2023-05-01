@@ -1,0 +1,13 @@
+Hacer el modo Debug
+// --dd => es el comando para hacer el modo verbose o debug
+$ npm run <script> --dd
+
+Limpiar la caché
+$ npm cache clean --force
+
+Verificar si hay caché
+$ npm cache verify
+
+ERRORES COMUNES, PUEDE QUE TENGAMOS ARCHIVOS FALLIDOS O CORRUPTOS
+> Solución: Eliminar la carpeta node_modules y ejecutar npm install
+$ sudo rm -rf node_modules

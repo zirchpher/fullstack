@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 6rem;
+}
+
+.menu__list {
+    display: flex;
+    list-style: none;
+}
+
+.menu__item {
+    position: relative;
+    margin: 0 1.5rem;
+}
+
+.menu__link {
+    padding: 0.5rem 2rem;
+    border-radius: 20rem;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.menu__link--active {
+    color: white;
+    background-color: seagreen;
+}
+
+.menu__link:hover {
+    color: white;
+    background-color: seagreen;
+}
+
+.menu__item:hover>.sub-menu {
+    transition: all 0.25s ease;
+    transform: scaleY(1);
+}
+
+.sub-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 2rem;
+    list-style: none;
+    background-color: seagreen;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.25s ease 0.5s;
+}
+
+.sub-menu__item {
+    position: relative;
+}
+
+.sub-menu__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.sub-menu__item:hover>.sub-menu__link {
+    color: seagreen;
+    background-color: white;
+}
+
+.sub-menu__item:hover .sub-menu__icon {
+    color: seagreen;
+    transition: all 0.25s ease;
+    transform: rotate(90deg);
+}
+
+.sub-menu__icon {
+    margin-left: 1rem;
+    color: white;
+    font-size: 2rem;
+    transition: transform 0.25s ease 0.5s;
+}
+
+.sub-sub-menu {
+    position: absolute;
+    left: calc(100% + 1remx);
+    top: 0;
+    left: calc(100% + 1rem);
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 2rem;
+    list-style: none;
+    background-color: seagreen;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.25s ease 0.5s;
+}
+
+.sub-sub-menu__link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.sub-sub-menu__link:hover {
+    color: seagreen;
+    background-color: white;
+}
+
+.sub-menu__item:hover>.sub-sub-menu {
+    transition: transform 0.25s ease;
+    transform: scaleY(1);
+}

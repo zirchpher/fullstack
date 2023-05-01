@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avocados</title>
+
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- ICONS -->
+    <!-- <script src="https://kit.fontawesome.com/3ffaa30c0f.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <header class="header page-header">
+        <section class="header-section">
+            <img class="header-section__item header-section__icon" src="/icons/avocado.png"
+                alt="main logo, figure an avocado">
+            <h2 class="header-section__item header-section__title">Avo Store</h2>
+        </section>
+
+        <section class="header-section__item header-section">
+            <img class="header-section__item header-section__icon" src="/icons/basket.png" alt="logo of a basket">
+            <h2 class="header-section__item header-section__title">Canasta</h2>
+            <p>
+                ( <span class="header-section__price">0</span> )
+            </p>
+        </section>
+    </header>
+
+    <main>
+        <div class="banner">
+            <div class="banner-presentation">
+                <span class="banner-presentation__text">Avo</span>
+                <img class="banner-presentation__img" src="/icons/avocado-cute.png" alt="banner image">
+                <span class="banner-presentation__text">Store</span>
+            </div>
+
+            <a class="banner__link" href="#">¿Debería comer una palta hoy?</a>
+        </div>
+
+        <div class="main-content">
+            <div id="app" class="avocado-cards"></div>
+        </div>
+    </main>
+
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

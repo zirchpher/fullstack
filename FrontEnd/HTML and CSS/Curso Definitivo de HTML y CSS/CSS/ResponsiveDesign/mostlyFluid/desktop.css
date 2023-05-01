@@ -1,0 +1,22 @@
+.container {
+    width: 1008px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container__item--red {
+    width: 60%;
+}
+
+.container__item--blue {
+    width: 40%;
+}
+
+.container__item--green,
+.container__item--silver {
+    width: 33%;
+}
+
+.container__item--skyblue {
+    width: 34;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Videos en html</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <style>
+            body {
+                background-color: darkgray;
+            }
+            .video {
+                border: 1px solid black;
+                width: 300px;
+                height: 300px;
+            }    
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <section>
+                <video controls preload="auto" class="video" muted>
+                    <source src="./kpp.mp4" />
+                    <source src="./kpp.m4a" />
+                    Your browser does not support the video tag.
+                </video>
+
+                <iframe width="1351" height="486" src="https://www.youtube.com/embed/smPgmQ_O8AM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+
+                <!-- 
+                https://www.w3schools.com/tags/tag_video.asp
+                La etiqueta <video>, tiene algunos atributos como:
+.
+                controls: agrega al video los controles necesarios para reproducir, pausar y adelantar.
+
+                preload = auto: hace que el navegador descargue el video, en el momento en el que se acceda a la página.
+
+                La etiqueta <source>, se puede colocar dentro de una etiqueta <video> varias veces, para especificar diferentes rutas. Esto para asegurar que cualquier navegador pueda mostrar el video.
+
+                preload="metadata"
+                Carga previa de los metadatos
+                preload="none"
+                No existe carga de vídeo previa
+
+                -->
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+El navegador genera un entorno global -> window
+hace 3 cosas
+
+    Objeto Global -> window
+    this -> depende del contexto o ámbito
+    otros ambientes
+
+Aquí pasa al contexto de ejecucion (execution context)
+
+y Luego si corre el código: Lo corre a través de un stack de tareas, las aplica una a una
+
+JS -> parser -> AST abstrac sintax tree -> interpreter -> Bytecode (no es lengauje de máquina) pero lo entiende la maquina
+
+Si el interpreter, se da cuenta que hay codigo que puede optimizar,
+
+interpreter -> Profiler (monitor) -> compiler -> optimized code [aqui es donde ocurre el hoisting].
+aqui es donde eventualmente se generan errores, ya que la maquina trata de optimizar o mejorar el codigo
+y es donde se pueden dar errores desconocidos.
+Es necesario tratar de evitar el hoisting
+el hoisting ocurre con variables y funciones que se mandan llamar
+
+
+Una preguntica de examen:
+Una estricta definición de hoisting sugiere que las declaraciones de variables y funciones son físicamente movidas al comienzo del código,asignandolas en memoria dentro de un contexto de ejecucion.

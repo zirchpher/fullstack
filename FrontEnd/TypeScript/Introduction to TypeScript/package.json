@@ -1,0 +1,23 @@
+{
+	"name": "introduction-to-typescript",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.ts",
+	"scripts": {
+		"start": "parcel index.html ts/**/*.html"
+	},
+	"keywords": [
+		"TypeScript",
+		"Basic",
+		"Fundamentals"
+	],
+	"author": "Remix Zapata <remixzapata@gmail.com>",
+	"license": "MIT",
+	"browserslist": [
+		"last 1 Firefox version"
+	],
+	"devDependencies": {
+		"parcel-bundler": "^1.3.1",
+		"typescript": "^4.8.4"
+	}
+}

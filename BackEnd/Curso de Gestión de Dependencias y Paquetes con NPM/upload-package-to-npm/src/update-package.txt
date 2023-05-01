@@ -1,0 +1,6 @@
+Para poder enviar el comando:
+$ npm version patch/minor/major
+
+Deben primero dejar limpio el working directory de git, es decir deben hacer un commit de los cambios que se realizaron o revertir cambios.
+
+Este error puede ocurrir cuando se añade en el package.json el repositorio de git, como se modifica el archivo es necesario hacerle commit antes de enviar el version patch

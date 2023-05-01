@@ -1,0 +1,29 @@
+@keyframes loader-scaling {
+    0%,
+    100% {
+        transform: scale(0.2);
+    }
+    40% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    95% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

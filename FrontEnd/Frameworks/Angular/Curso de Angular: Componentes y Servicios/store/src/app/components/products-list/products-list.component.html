@@ -1,0 +1,8 @@
+<p>Cantidad de productos en carrito: {{ addedProducts.length }} </p>
+<p>Precio total: {{ total | currency: 'PEN' }} </p>
+<p> Última actualización: {{ todayDate | date }} </p>
+
+<div class="product-list-container">
+    <app-products (shoppingCart)="productsInShoppingCart($event)" [product]="product"
+        *ngFor="let product of products"></app-products>
+</div>

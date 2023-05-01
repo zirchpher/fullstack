@@ -1,0 +1,16 @@
+url : https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
+
+los content-type les dicen al servidor cómo quiero que me lea lo que le estoy enviando
+headers: {
+    "Content-Type": "application/json",
+},
+En este caso le estoy diciendo que quiero que me lea el body como un json
+
+
+Si queremos que nos lea el body como formato CSV, le tenemos que decir:
+headers: {
+    "Content-Type": "text/csv",
+},
+
+Más info: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types

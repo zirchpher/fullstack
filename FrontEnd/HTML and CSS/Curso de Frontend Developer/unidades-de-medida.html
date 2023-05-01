@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Medidas</title>
+    <style>
+        html {
+            /*font-size: 62.5%;*/
+            
+            font-size: calc((100% * 10) / 16);
+            /*
+                Fórmula para que cada rem valga 10px
+                100%  -->  16px
+                 ?    -->  10px
+                
+                (10 * 100) % 16 = 62.5
+                ? = 62.5
+            */
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: papayawhip;
+            font-size: 5rem;
+        }
+        p {
+            font-size: 3rem; /*1rem = 16px pero lo podemos modificar a que cada 1rem valga 10px*/
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: skyblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>Platzi</div>
+    <p>Master</p>
+
+    <div class="container"></div>
+</body>
+</html>

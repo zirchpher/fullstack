@@ -1,0 +1,12 @@
+div {
+    inline-size: 150px;
+    block-size: 100px;
+    margin: 40px;
+    
+    transform-origin: right bottom;
+    background-color: lightsalmon;
+}
+
+div:hover {
+    transform: rotate(45deg);
+}

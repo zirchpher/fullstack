@@ -1,0 +1,23 @@
+.container {
+    display: grid;
+
+    border: 5px solid #e1bee7;
+
+    background-color: #fff1ff;
+}
+
+.container-up {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.container-down {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    
+    margin-top: 200px;
+}
+
+.item {
+    border: 5px solid #00bcd4;
+
+    font-size: 2rem;
+}

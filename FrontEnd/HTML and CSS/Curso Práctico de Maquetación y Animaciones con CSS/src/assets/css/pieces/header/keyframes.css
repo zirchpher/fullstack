@@ -1,0 +1,8 @@
+@keyframes navbar {
+    from {
+        transform: translatey(-100px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

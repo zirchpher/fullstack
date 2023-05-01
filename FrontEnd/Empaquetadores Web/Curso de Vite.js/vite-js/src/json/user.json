@@ -1,0 +1,16 @@
+{
+    "user" : {
+        "name": "Remix",
+        "lastname": "Zapata",
+        "username": "remmian",
+        "age": 20
+    },
+    "skills": {
+        "Web": [
+            "Html",
+            "CSS",
+            "JavaScript",
+            "Vite"
+        ]
+    }
+}

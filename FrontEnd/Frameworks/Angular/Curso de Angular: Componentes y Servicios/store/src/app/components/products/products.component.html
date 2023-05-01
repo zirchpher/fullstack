@@ -1,0 +1,8 @@
+<div>
+    <h2> {{ product.title }} </h2>
+    <img class="product-body__img" [src]="product.image" alt="">
+    <div class="product-body">
+        <p class="product-body__price">{{ product.price | currency: 'PEN' | number }}</p>
+        <button class="product-body__cart" (click)="addToCart()">Add to cart</button>
+    </div>
+</div>

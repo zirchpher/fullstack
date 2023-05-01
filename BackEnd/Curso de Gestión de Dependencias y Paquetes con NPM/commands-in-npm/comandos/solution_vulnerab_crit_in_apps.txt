@@ -1,0 +1,16 @@
+Solución para apps que tengan problemas de vulnerabilidad, criticidad
+
+Buscar actualizaciones y errores:
+$ npm install
+Busca errores más detalladamente
+$ npm audit
+Convierte lo anterior en json
+$ npm audit --json
+
+1) vulnerabilidad:
+$ npm audit fix
+
+2) Critical:
+$ npm update <nombre_paquete> --depth 2
+
+Y en caso de que esto no lo solucione, podemos ir actualizandolos de uno en uno.

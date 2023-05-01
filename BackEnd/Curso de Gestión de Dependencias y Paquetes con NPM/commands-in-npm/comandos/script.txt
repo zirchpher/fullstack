@@ -1,0 +1,10 @@
+"scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "start": "serve ./dist -s -l 8080"
+},
+
+>> Detalles:
+dev: Modo desarrollo.
+build: Compila todo y me crea un directorio dist.
+start: Toma el directorio dist y lanzo un servidor en modo producción.

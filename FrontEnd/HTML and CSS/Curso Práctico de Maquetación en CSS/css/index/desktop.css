@@ -1,0 +1,22 @@
+:root {
+    /* COLORS */
+    --primary-color: white;
+
+    /* FONTS */
+    --xl: 3rem;
+    --lg: 2.4rem;
+}
+
+.nav-logo-container__icon {
+    width: 34px;
+    height: 34px;
+}
+
+.icons {
+    margin-top: 4px;
+}
+.icons__item {
+    width: 40px;
+    height: 40px;
+    padding-right: 30px;
+}

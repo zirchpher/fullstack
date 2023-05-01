@@ -1,0 +1,11 @@
+div {
+    inline-size: 100px;
+    block-size: 100px;
+
+    border-radius: 20%;
+    background-color: goldenrod;
+}
+
+div:hover {
+    transform: skew(10deg);
+}

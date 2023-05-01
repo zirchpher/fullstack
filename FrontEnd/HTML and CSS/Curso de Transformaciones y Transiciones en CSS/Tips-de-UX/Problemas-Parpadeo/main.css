@@ -1,0 +1,14 @@
+div {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+}
+
+.container:hover .item {
+    transform: translateY(-10px);
+}
+
+.item {
+    background: palegoldenrod;
+}

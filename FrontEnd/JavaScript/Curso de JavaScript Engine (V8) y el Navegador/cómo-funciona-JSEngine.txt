@@ -1,0 +1,27 @@
+JavaScript Engine: Es el motor de JS, siempre corre en el navegador.
+Su función es interpretar el código JavaScript y convertirlo a Machine Code para que la máquina pueda entenderlo.
+- Just in time compiler: Es la compilación en tiempo real que sucede en el proceso del Engine.
+
+- V8 : es el motor que utiliza Chrome en sus navegadores
+
+JavaScript puede llegar a ser mucho más veloz que incluso C++
+Esto se debe a que JS utiliza una combinación de intérprete y Compilador
+
+¿Cómo logran funcionar estos 2 en paralelo?
+1.- ENGINE LOADS SOURCE CODE
+    - SOURCE CODE (JS CODE) => INTERPRETER
+2.- INTERPRETER STARTS THE APPLICATION
+    - Interpreter creates the "Hot Paths"
+3.- COMPILER (JIT) RECIVE CODE "HOT PATH" FIRST
+4.- COMPILER STARTS OPTIMISATION AND COMPILATION
+5.- COMPILER INCREMENRALLY IPTIMISES THE CODE
+    - Interpreter creates step 1
+    - Interpreter creates step 2
+                ...
+    - Interpreter creates step n
+    - FINALLY CREATE THE MACHINE CODE
+
+
+Resumen:
+Los motores JavaScript modernos combinan los beneficios del intérprete y del compilador:
+    -rápido inicio de la aplicación y rápida ejecución del código.

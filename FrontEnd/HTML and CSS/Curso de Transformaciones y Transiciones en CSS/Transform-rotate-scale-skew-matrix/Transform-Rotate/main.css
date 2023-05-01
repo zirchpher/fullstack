@@ -1,0 +1,10 @@
+div {
+    inline-size: 150px;
+    block-size: 100px;
+
+    background-color: goldenrod;
+}
+
+div:hover {
+    transform: rotate(30deg);
+}

@@ -1,0 +1,11 @@
+body
+{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-family: Helvetica;
+}
+abbr
+{ 
+    display: inline;
+}

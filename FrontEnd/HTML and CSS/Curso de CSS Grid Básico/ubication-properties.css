@@ -1,0 +1,67 @@
+main {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 100px 100px 100px;
+    place-content: center;
+    /* FORMA USANDO TEMPLATE ÁREA: */
+    grid-template-areas: 
+        "header header header"
+        "aside main main"
+        "aside main main";
+
+    border: 5px solid #e1bee7;
+
+    background-color: blanchedalmond;
+}
+
+section {
+    font-size: 4rem;
+}
+
+.item1 {
+    /* FORMA 1 */
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+
+    /* FORMA: USANDO GRID TEMPLATE */
+    grid-area: header;
+
+    border: 5px solid ghostwhite;
+
+    background-color: skyblue;
+}
+
+.item2 {
+    /* FORMA 2 */
+    /* grid-row: 2 / 4; */
+
+    /* FORMA: USANDO GRID TEMPLATE */
+    grid-area: aside;
+
+    border: 5px solid salmon;
+
+    background-color: sandybrown;
+}
+
+/* 
+    TÉRMINOS:
+    > FE : Fila en donde empieza.
+    > FT : Fila en donde termina.
+    > CE : Columna en donde empieza.
+    > CT : Columna en donde termina.
+*/
+
+.item3 {
+    /* APLICAMOS UN GRID AREA */
+    /* grid-area: 2 / 2 / 4 / 4; */
+    /*Secuencia ---> FE CE FT CT*/
+
+    /* FORMA: USANDO GRID TEMPLATE */
+    display: grid;
+    place-items: center;
+    grid-area: main;
+
+    border: 5px solid firebrick;
+
+    background-color: rebeccapurple;
+}

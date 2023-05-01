@@ -1,0 +1,10 @@
+HTTP Methods:
+    > GET: Lee datos del server (Solo Lectura)
+    > HEAD: Recupera datos de los headers (Solo Lectura)
+
+    > POST: Envía datos al server
+
+    > PUT: Edita TODOS los datos de un elemento del server
+    > PATCH: Edita solo ALGUNOS datos de un elemento del server
+
+    > DELETE Borra datos del server

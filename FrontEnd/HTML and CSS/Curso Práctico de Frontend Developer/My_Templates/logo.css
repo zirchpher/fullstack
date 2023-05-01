@@ -1,0 +1,133 @@
+:root {
+    --white : #FFFFFF;
+    --black : #000000;
+    --very-ligth-pink : #C7C7C7;
+    --text-input-field : #F7F7F7;
+    --hospital-green : #ACD9B2;
+    /*Font size*/
+    --sm : 13px;
+    --md : 16px;
+    --lg : 19px;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*Buenas prácticas para los atributos en css:
+Posicionamiento
+Box Model
+Tipografía
+Visuales
+Otros */
+
+.login {
+    display: grid;
+    place-items: start center;
+
+    width: 100%;
+    height: 50vh;
+}
+
+.form-container {
+    display: grid;
+
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+
+.logo {
+    justify-self: center;
+    width: 110px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 3px;
+    
+    width: 100%;
+    background-color: #f5f6f7;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+
+    font-size: 14px;
+}
+
+.primary-button {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 2px;
+    color: var(--white);
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.login-button {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.forgot-password-link {
+    color: #216fdb;
+    cursor: pointer;
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.link {
+    text-align: center;
+}
+
+.create-new-account {
+    margin-top: 24px;
+    justify-self: center;
+
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: #00a400;
+    color: var(--white);
+    padding: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer {
+    width: 100%;
+    height: 50vh;
+}
+
+.lang-left {
+    display: grid;
+    place-items: left center;
+}
+
+.lang-right {
+    display: grid;
+    place-items: center;
+}
+
+.copyright {
+    display: grid;
+    place-items: center;    
+}

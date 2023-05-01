@@ -1,0 +1,29 @@
+/* root settings in root */
+@import "./root.css";
+@import "./helpers.css";
+:root {
+    --delay-time: 1s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+
+    block-size: 100%;
+    block-size: 100vh;
+
+    font-family: "Lato", sans-serif;
+}

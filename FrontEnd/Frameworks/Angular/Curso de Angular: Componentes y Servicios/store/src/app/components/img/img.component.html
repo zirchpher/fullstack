@@ -1,0 +1,19 @@
+<p>
+    Con el evento de error ya no es necesario poner ng-template pues si detecta el evento del error se lanza el metodo
+    de imgError() y se carga la imageDefault
+</p>
+
+<p>
+    Ojo, si se quita el ng-template por defecto se enviará información hacia el componente padre automaticamente tenga o
+    no tenga una url correcta.
+    Si usamos el ngIf y el ng-template se soluciona el problema anterior, dependerá de ti, qué es lo que quieres lograr.
+</p>
+
+<img [src]="imgUrl" width="200px" alt="" (load)="imgLoaded()" *ngIf="imgUrl; else imgDefault"
+    (error)="showDefaultImage()">
+
+<h3> {{ counter }} </h3>
+
+<ng-template #imgDefault>
+    <img [src]="imgUrlDefault" alt="">
+</ng-template>

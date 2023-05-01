@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    inline-size: 100%;
+    block-size: 100vh;
+
+    background-image: linear-gradient(70deg, #f6d365 0%, #fda085 100%);
+}
+
+.card {
+    max-inline-size: 288px;
+    max-block-size: 320px;
+    margin: 0 auto;
+    /* border: 0 solid #000; */
+}
+
+.card-content {
+    position: relative;
+
+    inline-size: 100%;
+    block-size: 100%;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.card-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    inline-size: 100%;
+    block-size: 100%;
+
+    font-family: 'Lobster', cursive;
+    font-size: 3em;
+
+    border-radius: 20px;
+}
+
+.card-face--front {
+    background-color: blue;
+
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.card-face--back {
+    background-color: paleturquoise;
+
+    z-index: 1;
+}
+
+.card:hover .card-content {
+    transform: rotateY(180deg);
+}

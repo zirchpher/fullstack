@@ -1,0 +1,21 @@
+{
+  "name": "curso-de-asincronismo-con-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/callback/challenge.js"
+  },
+  "keywords": [
+    "JavaScript",
+    "Async"
+  ],
+  "author": "remmian",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^3.2.10",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "type": "module"
+}
