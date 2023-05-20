@@ -2,13 +2,19 @@
 
 # Índice
 
--   [Testing](#testing)
--   [Piramides del testing](#piramides-del-testing)
--   [Herramientas de Testing](#herramientas-de-testing)
--   [editorconfig airbnb](#editorconfig-airbnb)
--   [Pruebas estáticas con eslint](#pruebas-estáticas-con-eslint)
--   [Hack para que aparezcan los keywords de Jest](#hack-para-que-aparezcan-los-keywords-de-jest)
--   [Reporte de Cobertura](#reporte-de-cobertura)
+-   Introducción
+
+    -   [Testing](#testing)
+    -   [Piramides del testing](#piramides-del-testing)
+    -   [Herramientas de Testing](#herramientas-de-testing)
+    -   [editorconfig airbnb](#editorconfig-airbnb)
+    -   [Pruebas estáticas con eslint](#pruebas-estáticas-con-eslint)
+    -   [Hack para que aparezcan los keywords de Jest](#hack-para-que-aparezcan-los-keywords-de-jest)
+    -   [Reporte de Cobertura](#reporte-de-cobertura)
+
+-   Pruebas unitarias
+
+    -   [Mocking Stub y doubles](#mocking-stub-y-doubles)
 
 # Testing
 
@@ -151,3 +157,50 @@
 ```
 
 2. se creará una carpeta llamada "coverage", busca los archivos "index.html" y ábrelos en un navegador
+
+# Mocking Stub y doubles
+
+-   Definición de algunos keywords
+    -   **Dummy:** Son datos ficticios para llenar información.
+    -   **Fake:** Son objetos que simulan comportamientos o datos; como un usuario ficticio.
+    -   **Stub:** Son proveedores o APIs de tatos preparados (BD Clima).
+    -   **Spies:** Son como los stubs, pero se dejan espiar su comportamiento, comunicación e invocación.
+    -   **Mocks:** Mocks: Stubs + Spies, pueden estar pre-programados para enviar las respuestas supuestas.
+
+# Mocking
+
+-   Cuando queremos hacer pruebas a una base de datos real, si usamos las herramientas
+    como hasta ahora, corremos el riesgo de dañar, eliminar y agregar datos erróneamente
+    a la base de datos, por eso usamos los Mocks, simulamos una base de datos falsa y allí
+    hacemos todas las pruebas
+
+### Pasos para hacer un Mock
+
+-   En este caso vamos a hacer Mock a una clase llamada "MongoLib", dentro de esta clase
+    hay dos métodos "get" y "create"
+
+1. Creamos el libro fake que será devuelto por el mock
+
+```JavaScript
+const fakeBooks = [
+  {
+    _id: 1,
+    name: ‘Harry Potter’,
+  },
+];
+```
+
+2. Suplanta a nuestra mongoLib real
+
+```JAVASCRIPT
+const MongoLibStub = {
+    getAll: () => [...fakeBooks],
+    create: () => {},
+};
+```
+
+3. Suplantamos al método
+
+```JAVASCRIPT
+jest.mock('../lib/mongo.lib', () => jest.fn().mockImplementation(() => MongoLibStub));
+```

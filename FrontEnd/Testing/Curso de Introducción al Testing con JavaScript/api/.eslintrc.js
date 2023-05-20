@@ -6,14 +6,16 @@ module.exports = {
         node: true,
         jest: true,
     },
-    extends: ["airbnb-base"],
+    extends: ['airbnb-base'],
     parserOptions: {
-        ecmaVersion: "latest",
+        ecmaVersion: 'latest',
     },
     rules: {
-        indent: ["error", 4],
-        quotes: ["error", "double"],
-        semi: ["error", "always"],
-        "object-curly-spacing": ["error", "always"],
+        indent: ['error', 4],
+        'object-curly-spacing': ['error', 'always'],
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+        'arrow-body-style': ['error', 'as-needed', { requireReturnForObjectLiteral: true }],
+        'implicit-arrow-linebreak': ['error', 'below'],
     },
 };
