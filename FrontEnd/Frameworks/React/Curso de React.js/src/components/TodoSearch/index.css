@@ -28,7 +28,3 @@
 
   color: white;
 }
-
-.TodoSearch-input:focus {
-  border: 1px solid white;
-}
