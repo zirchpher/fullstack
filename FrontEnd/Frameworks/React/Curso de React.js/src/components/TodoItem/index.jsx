@@ -8,11 +8,9 @@ function TodoItem({ title, isCompleted, toggleCompleteTodo, deleteTodo }) {
   return (
     <li className="TodoItem">
       <span className="Icon Icon-check" onClick={toggleCompleteTodo}>
-        {isCompleted ? (
-          <FiCheckCircle className="Todo-completed-icon" />
-        ) : (
-          <RiTodoLine className="Todo-pending-icon" />
-        )}
+        {isCompleted
+          ? <FiCheckCircle className="Todo-completed-icon" />
+          : <RiTodoLine className="Todo-pending-icon" />}
       </span>
 
       <p className={`TodoItem-p ${isCompleted && "TodoItem-p--complete"}`}>

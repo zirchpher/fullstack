@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import {
   CreateTodoButton,
@@ -7,18 +6,11 @@ import {
   TodoList,
   TodoSearch,
 } from "../components";
-
-const defaultTodos = [
-  { title: "Cocinar Brocolío", isCompleted: false },
-  { title: "Salir a correr", isCompleted: true },
-  { title: "Almorzar", isCompleted: true },
-  { title: "Ver One Piece", isCompleted: false },
-  { title: "Tocar una canción", isCompleted: true },
-];
+import { useLocalStorage } from "./useLocalStorage.jsx";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
 
   const completedTodos = todos.filter((todo) => todo.isCompleted).length;
   const totalTodos = todos.length;
@@ -28,14 +20,14 @@ function App() {
     const todoIndex = newTodos.findIndex((todo) => todo.title === todoTitle);
     const todoIsCompletedValue = newTodos[todoIndex].isCompleted;
     newTodos[todoIndex].isCompleted = !todoIsCompletedValue;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const deleteTodo = (todoTitle) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.title === todoTitle);
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const todosToRender = todos.filter((todo) => {
@@ -67,3 +59,11 @@ function App() {
 }
 
 export default App;
+
+// const defaultTodos = [
+//   { title: "Cocinar Brocolío", isCompleted: false },
+//   { title: "Salir a correr", isCompleted: true },
+//   { title: "Almorzar", isCompleted: true },
+//   { title: "Ver One Piece", isCompleted: false },
+//   { title: "Tocar una canción", isCompleted: true },
+// ];
