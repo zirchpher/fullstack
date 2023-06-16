@@ -1,8 +1,13 @@
+// import
 import "./index.css";
+import { useContext } from "react";
+import { TodoContext } from "../../context/TodoContext";
 import { FiSearch } from "react-icons/fi";
 
 // eslint-disable-next-line react/prop-types
-function TodoSearch({ inputValue, setInputValue }) {
+function TodoSearch() {
+  const { inputValue, setInputValue } = useContext(TodoContext);
+
   const showInputValue = (event) => {
     const value = event.target.value;
     setInputValue(value);

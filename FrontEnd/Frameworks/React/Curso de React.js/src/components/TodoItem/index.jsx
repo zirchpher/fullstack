@@ -1,5 +1,5 @@
 import "./index.css";
-import { RiTodoLine } from "react-icons/ri";
+import { MdOutlineAccessTime } from "react-icons/md";
 import { FiCheckCircle } from "react-icons/fi";
 import { IoCloseCircleSharp } from "react-icons/io5";
 
@@ -10,7 +10,7 @@ function TodoItem({ title, isCompleted, toggleCompleteTodo, deleteTodo }) {
       <span className="Icon Icon-check" onClick={toggleCompleteTodo}>
         {isCompleted
           ? <FiCheckCircle className="Todo-completed-icon" />
-          : <RiTodoLine className="Todo-pending-icon" />}
+          : <MdOutlineAccessTime className="Todo-pending-icon" />}
       </span>
 
       <p className={`TodoItem-p ${isCompleted && "TodoItem-p--complete"}`}>
