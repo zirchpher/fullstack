@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+.social-media {
+  @apply flex items-center;
+}
+
+@tailwind utilities;
