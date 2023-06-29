@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="home">
+        <div class="w-full h-3/4">
+          <div class="w-full h-full flex flex-col absolute py-4 items-center">
+            <input
+              class="mb-80 outline-none py-2 px-4 rounded-3xl placeholder:capitalize Out focus:px-12"
+              placeholder="San Francisco"
+              type="search"
+            />
+            <button
+              class="bg-gray-50 py-2 px-4 rounded-full Out font-semibold transition ease-in-out delay-75 hover:scale-125 hover:bg-primary hover:text-gray-50 duration-300"
+              type="button"
+            >
+              Explorar
+            </button>
+          </div>
+
+          <figure class="w-full h-full">
+            <img
+              src="https://raw.githubusercontent.com/platzi/PlatziTravel/main/public/img/sanFrancisco.jpg"
+              alt="hero image of san francisco"
+            />
+          </figure>
+        </div>
+      </div>
+
+      <div class="tab-bar"></div>
+    </header>
+
+    <main>
+      <div class="">
+        <section id="recomendados" class="m-6">
+          <h2 class="text-2xl font-semibold text-primary">
+            Our Recomendations
+          </h2>
+
+          <div
+            class="w-auto h-auto py-2 flex gap-4 mt-6 overflow-x-auto overscroll-x-contain items-center"
+          >
+            <div class="Card">
+              <figure class="h-3/5">
+                <img
+                  src="https://raw.githubusercontent.com/platzi/PlatziTravel/main/public/img/norway.jpg"
+                  alt="Norway Landscape"
+                  class="w-full h-full object-cover rounded-t-md"
+                />
+              </figure>
+
+              <section class="h-2/5 pl-4 pt-4 bg-secondary rounded-b-md">
+                <h3 class="text-lg text-gray-100">Norway</h3>
+                <p class="text-sm text-gray-50">Beautiful Landscape</p>
+              </section>
+            </div>
+
+            <div class="Card">
+              <figure class="h-3/5">
+                <img
+                  src="https://raw.githubusercontent.com/platzi/PlatziTravel/main/public/img/new_york.jpg"
+                  alt="Norway Landscape"
+                  class="w-full h-full object-cover rounded-t-md"
+                />
+              </figure>
+
+              <section class="h-2/5 pl-4 pt-4 bg-gray-100 rounded-b-md">
+                <h3 class="text-lg text-tertiary">New York</h3>
+                <p class="text-sm text-tertiary">Lorem, ipsum.</p>
+              </section>
+            </div>
+
+            <div class="Card">
+              <figure class="h-3/5">
+                <img
+                  src="https://raw.githubusercontent.com/platzi/PlatziTravel/main/public/img/seattle.jpg"
+                  alt="Seattle"
+                  class="w-full h-full object-cover rounded-t-md"
+                />
+              </figure>
+
+              <section class="h-2/5 pl-4 pt-4 bg-secondary rounded-b-md">
+                <h3 class="text-lg text-gray-100">Seattle</h3>
+                <p class="text-sm text-gray-50">Beautiful Landscape</p>
+              </section>
+            </div>
+
+            <div class="Card">
+              <figure class="h-3/5">
+                <img
+                  src="https://raw.githubusercontent.com/platzi/PlatziTravel/main/public/img/yosemite.jpg"
+                  alt="Yosemite"
+                  class="w-full h-full object-cover rounded-t-md"
+                />
+              </figure>
+
+              <section class="h-2/5 pl-4 pt-4 bg-gray-100 rounded-b-md">
+                <h3 class="text-lg text-tertiary">Yosemite</h3>
+                <p class="text-sm text-tertiary">Lorem, ipsum.</p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <div id="rentasDestacas"></div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

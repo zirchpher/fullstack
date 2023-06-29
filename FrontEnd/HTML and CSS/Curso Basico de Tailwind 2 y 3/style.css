@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Out {
+  @apply focus-visible:outline-sky-400;
+}
+
+.Card {
+  @apply w-[180px] h-64 flex-none rounded-md hover:-translate-y-2 transition-transform;
+}
+
+/* great change */
+/* body { */
+/*   font-family: "Montserrat", sans-serif; */
+/* } */
