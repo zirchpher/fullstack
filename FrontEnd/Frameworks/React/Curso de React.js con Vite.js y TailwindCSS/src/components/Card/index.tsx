@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../context/ShoppingCartContext";
+import { CheckIcon } from "@heroicons/react/24/solid";
+import { PlusIcon } from "@heroicons/react/24/solid";
+import "./Card.css";
 
 function Card(product: Product) {
   const {
@@ -8,6 +11,7 @@ function Card(product: Product) {
     setProductToShow,
     setCartProducts,
     setIsCheckoutSideMenuVisible,
+    cartProducts,
   } = useContext(
     ShoppingCartContext,
   );
@@ -30,6 +34,31 @@ function Card(product: Product) {
     setProductToShow(product);
   };
 
+  const renderIcon = (id: number) => {
+    const addedProducts = cartProducts.filter((product) => {
+      return product.id === id;
+    });
+
+    const isTheProductInCart = addedProducts.length > 0;
+
+    if (isTheProductInCart) {
+      return (
+        <button className="effect-appear bg-blue-700 flex justify-center items-center absolute top-0 right-0 mt-3 mr-2 w-6 h-6 rounded-full font-semibold">
+          <CheckIcon className="text-gray-50 w-4 h-4 " />
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="flex justify-center items-center absolute top-0 right-0 mt-3 mr-2 w-6 h-6 rounded-full bg-gray-100 font-semibold"
+          onClick={addProductToCart}
+        >
+          <PlusIcon className="text-gray-800 w-4 h-4 " />
+        </button>
+      );
+    }
+  };
+
   return (
     <div className="w-56 h-60 grid grid-rows-[85%,15%] p-3 border border-gray-300 rounded-xl hover:bg-gray-100">
       <figure className="relative">
@@ -42,12 +71,8 @@ function Card(product: Product) {
         <span className="absolute bottom-0 left-0 bg-white/70 text-sm ml-2 mb-2 rounded-full px-2 py-0.5 font-medium">
           {product.category.name}
         </span>
-        <button
-          className="absolute top-0 right-0 mt-3 mr-2 w-6 h-6 rounded-full bg-gray-100 font-semibold"
-          onClick={addProductToCart}
-        >
-          +
-        </button>
+
+        {renderIcon(product.id)}
       </figure>
 
       <p className="flex justify-between items-center">

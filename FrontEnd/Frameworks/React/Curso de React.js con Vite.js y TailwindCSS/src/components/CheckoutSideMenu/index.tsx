@@ -3,17 +3,31 @@ import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { clsx } from "clsx";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { OrderCard } from "../OrderCard";
+import { getTotalSum } from "../../utils";
+import { Order } from "../../model/order.model";
 
 function CheckoutSideMenu() {
   const {
     isCheckoutSideMenuVisible,
     setIsCheckoutSideMenuVisible,
     cartProducts,
-  } = useContext(
-    ShoppingCartContext,
-  );
+    setCartProducts,
+    setOrder,
+  } = useContext(ShoppingCartContext);
 
   const closeCheckoutSideMenu = () => setIsCheckoutSideMenuVisible(false);
+
+  const handleCheckout = () => {
+    const orderToAdd: Order = {
+      creationAt: new Date(),
+      products: cartProducts,
+      totalProducts: cartProducts.length,
+      totalPrice: getTotalSum(cartProducts),
+    };
+
+    setOrder((orders) => [...orders, orderToAdd]);
+    setCartProducts([]);
+  };
 
   return (
     <aside
@@ -42,6 +56,21 @@ function CheckoutSideMenu() {
             />
           );
         })}
+      </div>
+
+      <div className="px-2 mb-4">
+        <p className="flex justify-around items-center py-1">
+          <span className="text-md font-lfont-light text-gray-800">Total:</span>
+          <span className="text-xl font-medium text-gray-900">
+            ${getTotalSum(cartProducts)}
+          </span>
+        </p>
+        <button
+          className="w-full py-2 bg-blue-700 text-gray-50 rounded-lg hover:bg-blue-800"
+          onClick={handleCheckout}
+        >
+          Checkout
+        </button>
       </div>
     </aside>
   );

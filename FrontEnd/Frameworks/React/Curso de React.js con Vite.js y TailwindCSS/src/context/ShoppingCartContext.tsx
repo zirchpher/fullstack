@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
+import { Order } from '../model/order.model';
 
 interface Props {
   children: JSX.Element;
@@ -11,6 +12,8 @@ interface Context {
   setProductToShow: React.Dispatch<React.SetStateAction<Product>>;
   cartProducts: Product[];
   setCartProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+  order: Order[];
+  setOrder: React.Dispatch<React.SetStateAction<Order[]>>;
   // --------------------
   // Visible Handler
   // --------------------
@@ -32,28 +35,30 @@ function ShoppingCartProvider({ children }: Props) {
   const [isProductDetailVisible, setIsProductDetailVisible] = useState(false);
   const [productToShow, setProductToShow] = useState<Product>({
     id: 0,
-    title: "",
+    title: '',
     price: 0,
-    description: "",
-    images: [""],
+    description: '',
+    images: [''],
     creationAt: new Date(),
     updatedAt: new Date(),
     category: {
       id: 0,
-      name: "",
-      image: "",
+      name: '',
+      image: '',
       creationAt: new Date(),
       updatedAt: new Date(),
     },
   });
 
+  // Product Detail . Open/close
+  const [isCheckoutSideMenuVisible, setIsCheckoutSideMenuVisible] =
+    useState(false);
+
   // Shopping Cart . add products to cart
   const [cartProducts, setCartProducts] = useState<Product[]>([]);
 
-  // Product Detail . Open/close
-  const [isCheckoutSideMenuVisible, setIsCheckoutSideMenuVisible] = useState(
-    false,
-  );
+  // Shopping Cart . add products to cart
+  const [order, setOrder] = useState<Order[]>([]);
 
   const contextValue: Context = {
     productsInCart,
@@ -66,6 +71,8 @@ function ShoppingCartProvider({ children }: Props) {
     setCartProducts,
     isCheckoutSideMenuVisible,
     setIsCheckoutSideMenuVisible,
+    order,
+    setOrder,
   };
 
   return (
