@@ -4,7 +4,7 @@ interface Props {
 
 function Layout({ children }: Props) {
   return (
-    <main className="flex flex-col items-center mt-20">
+    <main className="flex flex-col items-center mt-16">
       {children}
     </main>
   );

@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react';
-import { Order } from '../model/order.model';
+import React, { createContext, useState } from "react";
+import { useFetch } from "./useFetch";
+import { Order } from "../model/order.model";
 
 interface Props {
   children: JSX.Element;
@@ -14,6 +15,10 @@ interface Context {
   setCartProducts: React.Dispatch<React.SetStateAction<Product[]>>;
   order: Order[];
   setOrder: React.Dispatch<React.SetStateAction<Order[]>>;
+  products: Product[];
+  isLoading: boolean;
+  searchTitleProduct: string;
+  setSearchTitleProduct: React.Dispatch<React.SetStateAction<string>>;
   // --------------------
   // Visible Handler
   // --------------------
@@ -35,30 +40,39 @@ function ShoppingCartProvider({ children }: Props) {
   const [isProductDetailVisible, setIsProductDetailVisible] = useState(false);
   const [productToShow, setProductToShow] = useState<Product>({
     id: 0,
-    title: '',
+    title: "",
     price: 0,
-    description: '',
-    images: [''],
+    description: "",
+    images: [""],
     creationAt: new Date(),
     updatedAt: new Date(),
     category: {
       id: 0,
-      name: '',
-      image: '',
+      name: "",
+      image: "",
       creationAt: new Date(),
       updatedAt: new Date(),
     },
   });
 
   // Product Detail . Open/close
-  const [isCheckoutSideMenuVisible, setIsCheckoutSideMenuVisible] =
-    useState(false);
+  const [isCheckoutSideMenuVisible, setIsCheckoutSideMenuVisible] = useState(
+    false,
+  );
 
   // Shopping Cart . add products to cart
   const [cartProducts, setCartProducts] = useState<Product[]>([]);
 
   // Shopping Cart . add products to cart
   const [order, setOrder] = useState<Order[]>([]);
+
+  // Fetch Products
+  const { products, isLoading } = useFetch(
+    "https://api.escuelajs.co/api/v1/products",
+  );
+
+  // Search Products by title
+  const [searchTitleProduct, setSearchTitleProduct] = useState("");
 
   const contextValue: Context = {
     productsInCart,
@@ -73,6 +87,10 @@ function ShoppingCartProvider({ children }: Props) {
     setIsCheckoutSideMenuVisible,
     order,
     setOrder,
+    products,
+    isLoading,
+    searchTitleProduct,
+    setSearchTitleProduct,
   };
 
   return (

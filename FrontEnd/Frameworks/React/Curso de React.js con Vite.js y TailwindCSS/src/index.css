@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply container mx-auto;
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(14px);

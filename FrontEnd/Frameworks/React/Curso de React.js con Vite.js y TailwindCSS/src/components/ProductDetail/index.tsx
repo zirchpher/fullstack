@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { clsx } from "clsx";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { LazyImage } from "../LazyImage";
 
 function ProductDetail() {
   const { isProductDetailVisible, setIsProductDetailVisible, productToShow } =
@@ -28,9 +29,9 @@ function ProductDetail() {
       </section>
 
       <figure className="px-4 w-full h-64">
-        <img
-          className="w-full h-full rounded-lg"
+        <LazyImage
           src={productToShow.images[0]}
+          className="w-full h-full rounded-lg"
           alt={productToShow.title}
         />
       </figure>

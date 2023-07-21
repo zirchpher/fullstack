@@ -1,12 +1,13 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { clsx } from "clsx";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { OrderCard } from "../OrderCard";
-import { getTotalSum } from "../../utils";
+import { generateId, getTotalSum } from "../../utils";
 import { Order } from "../../model/order.model";
 
-function CheckoutSideMenu() {
+export function CheckoutSideMenu() {
   const {
     isCheckoutSideMenuVisible,
     setIsCheckoutSideMenuVisible,
@@ -19,6 +20,7 @@ function CheckoutSideMenu() {
 
   const handleCheckout = () => {
     const orderToAdd: Order = {
+      id: generateId(),
       creationAt: new Date(),
       products: cartProducts,
       totalProducts: cartProducts.length,
@@ -27,6 +29,13 @@ function CheckoutSideMenu() {
 
     setOrder((orders) => [...orders, orderToAdd]);
     setCartProducts([]);
+  };
+
+  const deleteProduct = (id: Product["id"]) => {
+    const newProducts = cartProducts.filter((product) => {
+      return product.id !== id;
+    });
+    setCartProducts(newProducts);
   };
 
   return (
@@ -53,6 +62,7 @@ function CheckoutSideMenu() {
               title={product.title}
               images={product.images}
               price={product.price}
+              deleteProduct={() => deleteProduct(product.id)}
             />
           );
         })}
@@ -65,15 +75,16 @@ function CheckoutSideMenu() {
             ${getTotalSum(cartProducts)}
           </span>
         </p>
-        <button
-          className="w-full py-2 bg-blue-700 text-gray-50 rounded-lg hover:bg-blue-800"
-          onClick={handleCheckout}
-        >
-          Checkout
-        </button>
+
+        <Link to="/my-orders/last">
+          <button
+            className="w-full py-2 bg-blue-700 text-gray-50 rounded-lg hover:bg-blue-800"
+            onClick={handleCheckout}
+          >
+            Checkout
+          </button>
+        </Link>
       </div>
     </aside>
   );
 }
-
-export { CheckoutSideMenu };

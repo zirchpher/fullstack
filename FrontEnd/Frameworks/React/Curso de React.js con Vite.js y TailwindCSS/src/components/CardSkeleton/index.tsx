@@ -1,6 +1,6 @@
 function CardSkeleton() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-col md:flex-row gap-4">
       <div
         role="status"
         className="grid h-60 w-56 animate-pulse grid-rows-[85%,15%] p-3 border border-gray-300 rounded-xl"

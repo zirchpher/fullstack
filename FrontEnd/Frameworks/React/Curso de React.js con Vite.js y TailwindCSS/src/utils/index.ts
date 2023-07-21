@@ -22,3 +22,10 @@ export const getTotalSum = (products: Product[]): number => {
   // Calculate the total sum of the prices using the reduce function
   return products.reduce((sum, product) => sum + product.price, 0);
 };
+
+/**
+ * Generates a unique identifier.
+ *
+ * @returns {number} A unique identifier.
+ */
+export const generateId = (): number => Number(new Date().getTime().toString());

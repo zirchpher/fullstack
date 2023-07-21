@@ -3,6 +3,7 @@ import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import "./Card.css";
+import { LazyImage } from "../index";
 
 function Card(product: Product) {
   const {
@@ -62,12 +63,13 @@ function Card(product: Product) {
   return (
     <div className="w-56 h-60 grid grid-rows-[85%,15%] p-3 border border-gray-300 rounded-xl hover:bg-gray-100">
       <figure className="relative">
-        <img
-          className="w-full h-full object-cover rounded-xl cursor-pointer"
+        <LazyImage
           src={product.images[0]}
-          alt="Headphones"
+          className="w-full h-full object-cover rounded-xl cursor-pointer"
+          alt={product.title}
           onClick={showProductDetail}
         />
+
         <span className="absolute bottom-0 left-0 bg-white/70 text-sm ml-2 mb-2 rounded-full px-2 py-0.5 font-medium">
           {product.category.name}
         </span>
