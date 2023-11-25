@@ -47,10 +47,17 @@
   color: #4caf50;
 }
 
-.Icon-delete {
+.floating-icon {
   position: absolute;
   top: -24px;
+}
+
+.Icon-delete {
   right: 0;
+}
+
+.Icon-edit {
+  right: 40px;
 }
 
 .Icon-delete:hover {
@@ -71,4 +78,12 @@
 
 .close-icon:hover {
   color: red;
+}
+
+.edit-icon {
+  color: rgb(53, 146, 29);
+}
+
+.edit-icon:hover {
+  color: rgb(92, 204, 64);
 }

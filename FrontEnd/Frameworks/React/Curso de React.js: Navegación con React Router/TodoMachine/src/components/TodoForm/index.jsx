@@ -1,23 +1,26 @@
-import { useState } from "react";
-import "./TodoForm.css";
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './TodoForm.css';
 
-function TodoForm({ setModalVisibility, addTodo }) {
-  const [newTodo, setNewTodo] = useState("");
+function TodoForm({ submitEvent, titleText, buttonText }) {
+  const navigate = useNavigate();
+  const [newTodo, setNewTodo] = useState('');
 
   const onSubmit = (event) => {
     event.preventDefault();
-    addTodo(newTodo);
-    setModalVisibility(false);
+    submitEvent(newTodo);
+    navigate('/');
   };
 
-  const closeModal = () => {
-    setModalVisibility(false);
+  const cancelAddTodo = () => {
+    navigate('/');
   };
 
   return (
     <form className="TodoForm" onSubmit={onSubmit}>
       <label htmlFor="addNewTodo" className="TodoForm__label">
-        Escribe tu nuevo TODO
+        {titleText}
       </label>
       <textarea
         name="addNewTodo"
@@ -26,13 +29,12 @@ function TodoForm({ setModalVisibility, addTodo }) {
         className="TodoForm__textarea"
         value={newTodo}
         onChange={(event) => setNewTodo(event.target.value)}
-      >
-      </textarea>
+      ></textarea>
       <div className="TodoForm__button-group">
         <button
           className="TodoForm__button TodoForm__button--cancel"
           type="button"
-          onClick={closeModal}
+          onClick={cancelAddTodo}
         >
           Cancelar
         </button>
@@ -40,7 +42,7 @@ function TodoForm({ setModalVisibility, addTodo }) {
           className="TodoForm__button TodoForm__button--add"
           type="submit"
         >
-          Añadir
+          {buttonText}
         </button>
       </div>
     </form>

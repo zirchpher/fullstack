@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useLocalStorage } from "./useLocalStorage";
+import { useState } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
 export function useTodos() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const [isTheModalVisible, setModalVisibility] = useState(false);
 
   const {
@@ -10,26 +10,27 @@ export function useTodos() {
     saveItem: saveTodos,
     isLoading,
     hasError,
-  } = useLocalStorage("TODOS_V1", []);
+  } = useLocalStorage('TODOS_V1', []);
 
   const completedTodos = todos.filter((todo) => todo.isCompleted).length;
   const totalTodos = todos.length;
 
   const addTodo = (newTodo) => {
-    saveTodos([...todos, { title: newTodo, isCompleted: false }]);
+    const id = generateId();
+    saveTodos([...todos, { id, title: newTodo, isCompleted: false }]);
   };
 
-  const toggleCompleteTodo = (todoTitle) => {
+  const toggleCompleteTodo = (id) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.title === todoTitle);
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
     const todoIsCompletedValue = newTodos[todoIndex].isCompleted;
     newTodos[todoIndex].isCompleted = !todoIsCompletedValue;
     saveTodos(newTodos);
   };
 
-  const deleteTodo = (todoTitle) => {
+  const deleteTodo = (id) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.title === todoTitle);
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
@@ -55,3 +56,12 @@ export function useTodos() {
     addTodo,
   };
 }
+
+/**
+ * Generates a unique ID.
+ *
+ * @return {string} The generated ID.
+ */
+const generateId = () => {
+  return Math.random().toString(36).substring(2, 10);
+};

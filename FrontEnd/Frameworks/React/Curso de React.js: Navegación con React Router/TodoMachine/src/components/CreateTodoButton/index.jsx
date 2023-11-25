@@ -1,13 +1,9 @@
-import "./index.css";
+/* eslint-disable react/prop-types */
+import './index.css';
 
-function CreateTodoButton({ setModalVisibility }) {
+function CreateTodoButton({ navigateToNewTodoPage }) {
   return (
-    <button
-      className="CreateTodoButton"
-      onClick={() => {
-        setModalVisibility((state) => !state);
-      }}
-    >
+    <button className="CreateTodoButton" onClick={navigateToNewTodoPage}>
       +
     </button>
   );
